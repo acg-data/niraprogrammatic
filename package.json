@@ -1,0 +1,21 @@
+{
+  "name": "niraprogrammatic",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "pages:generate": "node scripts/generate-pages.mjs",
+    "dev": "pnpm run pages:generate && vite --config vite.config.ts --host 0.0.0.0",
+    "build": "pnpm run pages:generate && vite build --config vite.config.ts",
+    "serve": "pnpm run pages:generate && vite preview --config vite.config.ts --host 0.0.0.0",
+    "pages:dev": "pnpm run build && pnpm dlx wrangler@latest pages dev dist/public",
+    "deploy": "pnpm run build && pnpm dlx wrangler@latest pages deploy dist/public",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.2"
+  }
+}

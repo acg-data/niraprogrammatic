@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nira-9pc.pages.dev/sitemap.xml
