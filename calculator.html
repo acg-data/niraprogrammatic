@@ -27,8 +27,7 @@
 <header class="site-header container">
   <nav class="nav" aria-label="Primary">
     <a href="/" class="brand" aria-label="Nira Dental Abroad - Home">
-      <img class="brand-logo" src="/nira-wordmark.svg" alt="Nira" width="790" height="358" />
-      <span class="tag">DENTAL ABROAD</span>
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
     </a>
     <div class="nav-links">
       <a href="/services">Services</a>
@@ -38,19 +37,119 @@
       <a href="/insights">Insights</a>
       <a href="/#faq">FAQ</a>
     </div>
-    <a href="/calculator" class="btn btn--primary">Compare Your Quote</a>
+    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </nav>
 </header>
-<section class="container hero">
-  <div class="hero-copy">
-    <div class="rule"></div>
-    <div class="eyebrow">Interactive calculator</div>
-    <h1>Compare your dental quote in minutes.</h1>
-    <p class="lede">Adjust treatment type, quantity, materials, U.S. market, and case complexity to estimate the range between U.S. care and premium destination options.</p>
-    
+<div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+  <div class="nav-mobile-top">
+    <a href="/" class="brand" aria-label="Nira Dental Abroad">
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
+    </a>
+    <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
   </div>
-  <div class="hero-art" aria-hidden="true">
-    <div class="stat"><strong>4</strong><span>markets compared</span></div><div class="stat"><strong>5</strong><span>treatment types</span></div><div class="stat"><strong>Live</strong><span>estimate updates</span></div>
+  <nav class="nav-mobile-links">
+    <a href="/services">Services</a>
+    <a href="/compare#countries">Countries</a>
+    <a href="/calculator">Calculator</a>
+    <a href="/compare">Compare</a>
+    <a href="/insights">Insights</a>
+    <a href="/#faq">FAQ</a>
+  </nav>
+  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+</div>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<section class="ch-split container">
+  <div class="ch-text">
+    <div class="rule"></div>
+    <div class="eyebrow">Interactive Calculator</div>
+    <h1>Compare your dental quote in <em class="ch-accent">minutes.</em></h1>
+    <p class="lede">Adjust treatment type, quantity, materials, U.S. market, and case complexity to estimate the range between U.S. care and premium destination options.</p>
+    <div class="ch-trust">
+      <div class="ch-trust-item">
+        <span class="ch-trust-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+        <strong>Multiple Markets</strong>
+        <span>Compare up to 4 global markets.</span>
+      </div>
+      <div class="ch-trust-sep"></div>
+      <div class="ch-trust-item">
+        <span class="ch-trust-ico"><svg viewBox="0 0 24 24"><path d="M12 2C9 2 6.5 3.5 6.5 7c0 2.5.5 4.5.5 8 0 1.5.5 3 1.5 3S10 18.5 10 17c0-1.5 1.2-2.5 2-2.5s2 1 2 2.5c0 1.5.5 3 1.5 3S17 19.5 17 18c0-3.5.5-5.5.5-8C17.5 3.5 15 2 12 2z"/></svg></span>
+        <strong>Treatment Options</strong>
+        <span>5 treatment types to customize.</span>
+      </div>
+      <div class="ch-trust-sep"></div>
+      <div class="ch-trust-item">
+        <span class="ch-trust-ico"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+        <strong>Live Estimates</strong>
+        <span>See updated ranges as you adjust.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ch-card">
+    <div class="ch-feats">
+      <div class="ch-feat">
+        <span class="ch-feat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+        <div>
+          <div class="ch-feat-num">4</div>
+          <div class="ch-feat-label">markets compared</div>
+          <div class="ch-feat-desc">U.S., Mexico, Costa Rica, Colombia &amp; more.</div>
+        </div>
+      </div>
+      <hr class="ch-divider"/>
+      <div class="ch-feat">
+        <span class="ch-feat-ico"><svg viewBox="0 0 24 24"><path d="M12 2C9 2 6.5 3.5 6.5 7c0 2.5.5 4.5.5 8 0 1.5.5 3 1.5 3S10 18.5 10 17c0-1.5 1.2-2.5 2-2.5s2 1 2 2.5c0 1.5.5 3 1.5 3S17 19.5 17 18c0-3.5.5-5.5.5-8C17.5 3.5 15 2 12 2z"/></svg></span>
+        <div>
+          <div class="ch-feat-num">5</div>
+          <div class="ch-feat-label">treatment types</div>
+          <div class="ch-feat-desc">Crowns, Implants, Veneers, All-on-4 &amp; more.</div>
+        </div>
+      </div>
+      <hr class="ch-divider"/>
+      <div class="ch-feat">
+        <span class="ch-feat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg></span>
+        <div>
+          <div class="ch-feat-num ch-feat-num--word">Live</div>
+          <div class="ch-feat-label">estimate updates</div>
+          <div class="ch-feat-desc">Adjust inputs and see your range updated live.</div>
+        </div>
+      </div>
+    </div>
+    <div class="ch-illu"><svg viewBox="0 0 200 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" aria-hidden="true">
+  <g transform="rotate(-7,145,55)">
+    <rect x="70" y="14" width="145" height="82" rx="9" fill="white" opacity="0.95"/>
+    <text x="84" y="34" font-family="Montserrat,sans-serif" font-size="8" font-weight="600" fill="#4a4742">Estimated Range</text>
+    <rect x="84" y="46" width="113" height="4" rx="2" fill="#e8dfd3"/>
+    <rect x="84" y="46" width="63" height="4" rx="2" fill="#a46f52"/>
+    <circle cx="147" cy="48" r="5" fill="#a46f52"/>
+    <text x="84" y="66" font-family="Montserrat,sans-serif" font-size="9" fill="#8f8e8e">$</text>
+    <text x="184" y="66" font-family="Montserrat,sans-serif" font-size="9" fill="#8f8e8e" text-anchor="end">$$$$</text>
+    <text x="84" y="82" font-family="Montserrat,sans-serif" font-size="7" fill="#c0b8b0">U.S. vs. abroad estimate</text>
+  </g>
+  <rect x="18" y="112" width="155" height="173" rx="12" fill="rgba(22,20,18,0.55)"/>
+  <rect x="30" y="124" width="131" height="42" rx="6" fill="rgba(0,0,0,0.3)"/>
+  <text x="153" y="152" font-family="monospace" font-size="22" font-weight="700" fill="#8fa089" text-anchor="end">$$$</text>
+  <rect x="30" y="176" width="28" height="18" rx="3" fill="rgba(255,255,255,0.14)"/>
+  <rect x="64" y="176" width="28" height="18" rx="3" fill="rgba(255,255,255,0.14)"/>
+  <rect x="98" y="176" width="28" height="18" rx="3" fill="rgba(255,255,255,0.14)"/>
+  <rect x="132" y="176" width="28" height="18" rx="3" fill="rgba(255,255,255,0.14)"/>
+  <rect x="30" y="202" width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="64" y="202" width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="98" y="202" width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="132" y="202" width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="30" y="228" width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="64" y="228" width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="98" y="228" width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="132" y="228" width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="30" y="254" width="28" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="64" y="254" width="62" height="18" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="132" y="254" width="28" height="18" rx="3" fill="#a46f52" opacity="0.9"/>
+</svg></div>
   </div>
 </section>
 <section class="band"><div class="container"><div class="calc-panel">
@@ -81,13 +180,12 @@
   </div>
 </div></div></section>
 <section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow">How to use it</div><h2>Estimate first, then personalize.</h2></div><p>This calculator is a planning tool. Final pricing depends on diagnostics, provider recommendation, materials, case complexity, and travel timing. A personalized review should use your quote, X-rays, treatment plan, or photos.</p></div><div class="grid grid--3"><article class="card"><h3>1. Choose treatment</h3><p>Select the service that best matches your current quote or likely treatment plan.</p></article><article class="card"><h3>2. Tune the case</h3><p>Adjust material grade, market, quantity, and complexity so the estimate reflects your likely scenario.</p></article><article class="card"><h3>3. Compare destinations</h3><p>Review the U.S., Colombia, Costa Rica, and Mexico ranges before requesting a deeper comparison.</p></article></div></div></section>
-<section class="cta"><div class="container cta-inner"><div><h2>Ready for a personalized comparison?</h2><p>Send your quote or treatment plan so Nira can coordinate a more precise provider review.</p></div><div class="hero-actions"><a href="/calculator" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
+<section class="cta"><div class="container cta-inner"><div><h2>Ready for a personalized comparison?</h2><p>Send your quote or treatment plan so Nira can coordinate a more precise provider review.</p></div><div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
 <footer class="site-footer">
   <div class="container">
     <div class="foot-top">
       <div class="foot-brand">
-        <img class="foot-logo" src="/nira-wordmark-light.svg" alt="Nira" width="790" height="358" />
-        <div class="tag">DENTAL ABROAD</div>
+        <img class="foot-logo" src="/nira-logo-dental-abroad-light.svg" alt="Nira Dental Abroad" width="790" height="475" />
       </div>
       <div class="foot-col">
         <h5>Services</h5>
@@ -118,5 +216,20 @@
   </div>
 </footer>
 <script src="/nira-calculator.js"></script>
+<script>
+(function(){
+  var h=document.getElementById('nav-hamburger');
+  var m=document.getElementById('nav-mobile');
+  var o=document.getElementById('nav-overlay');
+  var c=document.getElementById('nav-mobile-close');
+  function open(){m.classList.add('is-open');o.classList.add('is-open');h.setAttribute('aria-expanded','true');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){m.classList.remove('is-open');o.classList.remove('is-open');h.setAttribute('aria-expanded','false');m.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  h.addEventListener('click',open);
+  c.addEventListener('click',close);
+  o.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
 </body>
 </html>

@@ -1,3 +1,4 @@
-name = "nira"
+name = "nira-dental"
+account_id = "ebc0e89cb4181eded2f97098ec29efa8"
 pages_build_output_dir = "dist/public"
 compatibility_date = "2026-05-26"

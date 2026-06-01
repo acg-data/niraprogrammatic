@@ -27,8 +27,7 @@
 <header class="site-header container">
   <nav class="nav" aria-label="Primary">
     <a href="/" class="brand" aria-label="Nira Dental Abroad - Home">
-      <img class="brand-logo" src="/nira-wordmark.svg" alt="Nira" width="790" height="358" />
-      <span class="tag">DENTAL ABROAD</span>
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
     </a>
     <div class="nav-links">
       <a href="/services">Services</a>
@@ -38,75 +37,141 @@
       <a href="/insights">Insights</a>
       <a href="/#faq">FAQ</a>
     </div>
-    <a href="/calculator" class="btn btn--primary">Compare Your Quote</a>
+    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </nav>
 </header>
-<section class="container hero">
-  <div class="hero-copy">
-    <div class="rule"></div>
-    <div class="eyebrow">Country comparison</div>
-    <h1>Compare premium dental destinations.</h1>
-    <p class="lede">Use this hub to compare Mexico, Costa Rica, and Colombia against the U.S. baseline for cost, timeline, and travel style.</p>
-    <div class="hero-actions"><a href="/calculator" class="btn btn--primary">Compare Your Quote</a><a href="/services" class="btn btn--ghost">Explore Services</a></div>
+<div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+  <div class="nav-mobile-top">
+    <a href="/" class="brand" aria-label="Nira Dental Abroad">
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
+    </a>
+    <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
   </div>
-  <div class="hero-art" aria-hidden="true">
-    <div class="stat"><strong>3</strong><span>vetted destination profiles</span></div><div class="stat"><strong>50-75%</strong><span>typical savings range for major cases</span></div><div class="stat"><strong>5+</strong><span>major treatment categories compared</span></div>
+  <nav class="nav-mobile-links">
+    <a href="/services">Services</a>
+    <a href="/compare#countries">Countries</a>
+    <a href="/calculator">Calculator</a>
+    <a href="/compare">Compare</a>
+    <a href="/insights">Insights</a>
+    <a href="/#faq">FAQ</a>
+  </nav>
+  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+</div>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<section class="compare-split container" id="countries">
+  <div class="compare-text">
+    <div class="rule"></div>
+    <div class="eyebrow">Country Comparison</div>
+    <h1>Compare dental destinations before you choose.</h1>
+    <p class="lede">See how Mexico, Costa Rica, and Colombia compare with U.S. dental costs, treatment timelines, and travel comfort.</p>
+    <div class="hero-actions">
+      <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+      <a href="/services" class="btn btn--ghost">Explore Services</a>
+    </div>
+    <div class="trust-strip">
+      <div class="trust-item">
+        <span class="trust-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <div><strong>Vetted Clinics</strong><span>Trusted providers in every country</span></div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <span class="trust-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <div><strong>Transparent Savings</strong><span>Real numbers. No hidden fees.</span></div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <span class="trust-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.55 5.55l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <div><strong>Guided Support</strong><span>We're with you every step.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ctable-wrap">
+    <div class="ctable-card">
+      <div class="ctable-head">
+        <span>Destination</span>
+        <span>Typical Savings</span>
+        <span>Best For</span>
+      </div>
+      <div class="ctable-row">
+  <div class="ctable-dest">
+    <img class="ci" src="/mexico.jpg" alt="Mexico" width="78" height="78" />
+    <div>
+      <h3>Mexico</h3>
+      <span class="ctable-cities"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cancún, Los Cabos, Tijuana</span>
+    </div>
+  </div>
+  <div class="ctable-savings">
+    <div class="ctable-pct">50–70%</div>
+    <div class="ctable-vs">vs U.S. average</div>
+  </div>
+  <div class="ctable-bf">
+    <span class="bf-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+    <div>
+      <div class="bf-label">Quick trips</div>
+      <div class="bf-desc">Shorter travel time<br>Lower overall cost</div>
+    </div>
+  </div>
+</div>
+<div class="ctable-row">
+  <div class="ctable-dest">
+    <img class="ci" src="/costa-rica.jpg" alt="Costa Rica" width="78" height="78" />
+    <div>
+      <h3>Costa Rica</h3>
+      <span class="ctable-cities"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>San José, Alajuela, Liberia</span>
+    </div>
+  </div>
+  <div class="ctable-savings">
+    <div class="ctable-pct">45–65%</div>
+    <div class="ctable-vs">vs U.S. average</div>
+  </div>
+  <div class="ctable-bf">
+    <span class="bf-ico"><svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9z"/><line x1="2" y1="9" x2="22" y2="9"/></svg></span>
+    <div>
+      <div class="bf-label">Premium care</div>
+      <div class="bf-desc">High-quality clinics<br>Relaxing recovery</div>
+    </div>
+  </div>
+</div>
+<div class="ctable-row">
+  <div class="ctable-dest">
+    <img class="ci" src="/colombia.jpg" alt="Colombia" width="78" height="78" />
+    <div>
+      <h3>Colombia</h3>
+      <span class="ctable-cities"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Medellín, Bogotá, Cali</span>
+    </div>
+  </div>
+  <div class="ctable-savings">
+    <div class="ctable-pct">55–75%</div>
+    <div class="ctable-vs">vs U.S. average</div>
+  </div>
+  <div class="ctable-bf">
+    <span class="bf-ico"><svg viewBox="0 0 24 24"><path d="M12 2C9 2 6.5 3.5 6.5 7c0 2.5.5 4.5.5 8 0 1.5.5 3 1.5 3S10 18.5 10 17c0-1.5 1.2-2.5 2-2.5s2 1 2 2.5c0 1.5.5 3 1.5 3S17 19.5 17 18c0-3.5.5-5.5.5-8C17.5 3.5 15 2 12 2z"/></svg></span>
+    <div>
+      <div class="bf-label">Complex cases</div>
+      <div class="bf-desc">Full smile makeovers<br>Advanced treatments</div>
+    </div>
+  </div>
+</div>
+      <div class="ctable-foot">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        All destinations are carefully vetted for quality, safety, and patient experience.
+      </div>
+    </div>
   </div>
 </section>
-<section class="band" id="countries"><div class="container"><div class="section-head"><div><div class="eyebrow">Countries</div><h2>Choose by fit, not just price.</h2></div><p>Each destination has a different balance of travel time, savings, provider depth, and recovery style. Start with the country profile, then use the calculator to compare treatment economics.</p></div><div class="grid grid--3"><article class="card">
-    <div class="kicker">50-70% typical savings</div>
-    <h3>Mexico</h3>
-    <p>Premium clinics, quick travel from the U.S., and strong value for major restorative and cosmetic dental work.</p>
-    <ul class="mini-list">
-      <li>5-10 days typical planning window</li>
-      <li>Veneers, crowns, implants, full-mouth restoration, and All-on-4 planning.</li>
-      <li>Shortest travel window</li>
-    </ul>
-    <div class="card-actions"><a href="/countries/mexico" class="btn btn--ghost">View Mexico</a></div>
-  </article><article class="card">
-    <div class="kicker">45-65% typical savings</div>
-    <h3>Costa Rica</h3>
-    <p>A premium dental travel option for patients who value accredited clinics, restorative expertise, and a calmer recovery setting.</p>
-    <ul class="mini-list">
-      <li>6-12 days typical planning window</li>
-      <li>Full-mouth restorations, crowns, implants, and planned smile makeovers.</li>
-      <li>Premium recovery setting</li>
-    </ul>
-    <div class="card-actions"><a href="/countries/costa-rica" class="btn btn--ghost">View Costa Rica</a></div>
-  </article><article class="card">
-    <div class="kicker">55-75% typical savings</div>
-    <h3>Colombia</h3>
-    <p>A strong value destination for smile design and restorative care, with experienced specialists in major cities.</p>
-    <ul class="mini-list">
-      <li>6-12 days typical planning window</li>
-      <li>Veneers, crowns, implants, and comprehensive smile makeovers.</li>
-      <li>Strong value profile</li>
-    </ul>
-    <div class="card-actions"><a href="/countries/colombia" class="btn btn--ghost">View Colombia</a></div>
-  </article></div></div></section>
-<section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow">At a glance</div><h2>Destination comparison.</h2></div><p>The ranges below are directional and intended for planning. Final quotes depend on diagnostics, materials, case complexity, and provider recommendation.</p></div><div class="table-wrap"><table><thead><tr><th>Destination</th><th>Savings</th><th>Timeline</th><th>Best Fit</th></tr></thead><tbody><tr>
-    <td><strong>Mexico</strong></td>
-    <td>50-70%</td>
-    <td>5-10 days</td>
-    <td>Veneers, crowns, implants, full-mouth restoration, and All-on-4 planning.</td>
-  </tr><tr>
-    <td><strong>Costa Rica</strong></td>
-    <td>45-65%</td>
-    <td>6-12 days</td>
-    <td>Full-mouth restorations, crowns, implants, and planned smile makeovers.</td>
-  </tr><tr>
-    <td><strong>Colombia</strong></td>
-    <td>55-75%</td>
-    <td>6-12 days</td>
-    <td>Veneers, crowns, implants, and comprehensive smile makeovers.</td>
-  </tr></tbody></table></div></div></section>
-<section class="cta"><div class="container cta-inner"><div><h2>Still deciding where to start?</h2><p>Use the calculator to compare your treatment type across Mexico, Costa Rica, Colombia, and the U.S. baseline.</p></div><div class="hero-actions"><a href="/calculator" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
+<section class="cta"><div class="container cta-inner"><div><h2>Have a treatment plan already?</h2><p>Use the calculator to compare your specific treatment type across all three destinations.</p></div><div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
 <footer class="site-footer">
   <div class="container">
     <div class="foot-top">
       <div class="foot-brand">
-        <img class="foot-logo" src="/nira-wordmark-light.svg" alt="Nira" width="790" height="358" />
-        <div class="tag">DENTAL ABROAD</div>
+        <img class="foot-logo" src="/nira-logo-dental-abroad-light.svg" alt="Nira Dental Abroad" width="790" height="475" />
       </div>
       <div class="foot-col">
         <h5>Services</h5>
@@ -137,5 +202,20 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var h=document.getElementById('nav-hamburger');
+  var m=document.getElementById('nav-mobile');
+  var o=document.getElementById('nav-overlay');
+  var c=document.getElementById('nav-mobile-close');
+  function open(){m.classList.add('is-open');o.classList.add('is-open');h.setAttribute('aria-expanded','true');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){m.classList.remove('is-open');o.classList.remove('is-open');h.setAttribute('aria-expanded','false');m.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  h.addEventListener('click',open);
+  c.addEventListener('click',close);
+  o.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
 </body>
 </html>

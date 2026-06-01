@@ -27,8 +27,7 @@
 <header class="site-header container">
   <nav class="nav" aria-label="Primary">
     <a href="/" class="brand" aria-label="Nira Dental Abroad - Home">
-      <img class="brand-logo" src="/nira-wordmark.svg" alt="Nira" width="790" height="358" />
-      <span class="tag">DENTAL ABROAD</span>
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
     </a>
     <div class="nav-links">
       <a href="/services">Services</a>
@@ -38,16 +37,39 @@
       <a href="/insights">Insights</a>
       <a href="/#faq">FAQ</a>
     </div>
-    <a href="/calculator" class="btn btn--primary">Compare Your Quote</a>
+    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </nav>
 </header>
+<div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+  <div class="nav-mobile-top">
+    <a href="/" class="brand" aria-label="Nira Dental Abroad">
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
+    </a>
+    <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="nav-mobile-links">
+    <a href="/services">Services</a>
+    <a href="/compare#countries">Countries</a>
+    <a href="/calculator">Calculator</a>
+    <a href="/compare">Compare</a>
+    <a href="/insights">Insights</a>
+    <a href="/#faq">FAQ</a>
+  </nav>
+  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+</div>
+<div class="nav-overlay" id="nav-overlay"></div>
 <section class="container hero">
   <div class="hero-copy">
     <div class="rule"></div>
     <div class="eyebrow">Country guide</div>
     <h1>Dental Care in Colombia</h1>
     <p class="lede">A strong value destination for smile design and restorative care, with experienced specialists in major cities.</p>
-    <div class="hero-actions"><a href="/calculator" class="btn btn--primary">Compare Your Quote</a><a href="/services" class="btn btn--ghost">Explore Services</a></div>
+    <div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/services" class="btn btn--ghost">Explore Services</a></div>
   </div>
   <div class="hero-art" aria-hidden="true">
     <div class="stat"><strong>55-75%</strong><span>typical savings for major cases</span></div><div class="stat"><strong>6-12 days</strong><span>planning and treatment window</span></div><div class="stat"><strong>5</strong><span>major services compared</span></div>
@@ -55,13 +77,12 @@
 </section>
 <section class="band"><div class="container"><div class="section-head"><div><div class="eyebrow">Why Colombia</div><h2>When this destination makes sense.</h2></div><ul class="mini-list"><li>Competitive pricing across premium private clinics.</li><li>Specialist depth in major dental centers.</li><li>Good fit for patients comfortable with a longer trip.</li></ul></div><div class="table-wrap"><table><thead><tr><th>Treatment</th><th>Estimated Range</th><th>Typical Window</th></tr></thead><tbody><tr><td><strong>veneers</strong></td><td>$400 - $650 per tooth</td><td>6-12 days</td></tr><tr><td><strong>crowns</strong></td><td>$450 - $750 per tooth</td><td>6-12 days</td></tr><tr><td><strong>implants</strong></td><td>$1,300 - $1,900 per implant</td><td>6-12 days</td></tr><tr><td><strong>full-mouth restoration</strong></td><td>$11,000 - $19,000 per case</td><td>6-12 days</td></tr></tbody></table></div></div></section>
 <section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow">Services</div><h2>Common treatment categories.</h2></div><p>Veneers, crowns, implants, and comprehensive smile makeovers.</p></div><div class="grid grid--3"><article class="card"><h3>Veneers</h3><p>Compare natural-looking veneer options with vetted providers abroad and a guided travel plan.</p><div class="card-actions"><a href="/services/veneers" class="btn btn--ghost">View service</a></div></article><article class="card"><h3>Crowns</h3><p>Explore crown options for damaged, restored, or cosmetically improved teeth with transparent pricing by destination.</p><div class="card-actions"><a href="/services/crowns" class="btn btn--ghost">View service</a></div></article><article class="card"><h3>Implants</h3><p>Plan implant treatment abroad with a clear view of cost, timeline, travel needs, and follow-up considerations.</p><div class="card-actions"><a href="/services/implants" class="btn btn--ghost">View service</a></div></article><article class="card"><h3>Full-Mouth Restoration</h3><p>Compare comprehensive restorative treatment plans that combine crowns, implants, veneers, or full-arch solutions.</p><div class="card-actions"><a href="/services/full-mouth-restoration" class="btn btn--ghost">View service</a></div></article><article class="card"><h3>Smile Makeovers</h3><p>Coordinate multi-service smile transformations with transparent options for destination, timeline, and provider match.</p><div class="card-actions"><a href="/services/smile-makeovers" class="btn btn--ghost">View service</a></div></article></div></div></section>
-<section class="cta"><div class="container cta-inner"><div><h2>Compare Colombia with your U.S. quote</h2><p>Use the standalone calculator to review treatment type, material grade, market, and case complexity.</p></div><div class="hero-actions"><a href="/calculator" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
+<section class="cta"><div class="container cta-inner"><div><h2>Compare Colombia with your U.S. quote</h2><p>Use the standalone calculator to review treatment type, material grade, market, and case complexity.</p></div><div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
 <footer class="site-footer">
   <div class="container">
     <div class="foot-top">
       <div class="foot-brand">
-        <img class="foot-logo" src="/nira-wordmark-light.svg" alt="Nira" width="790" height="358" />
-        <div class="tag">DENTAL ABROAD</div>
+        <img class="foot-logo" src="/nira-logo-dental-abroad-light.svg" alt="Nira Dental Abroad" width="790" height="475" />
       </div>
       <div class="foot-col">
         <h5>Services</h5>
@@ -92,5 +113,20 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var h=document.getElementById('nav-hamburger');
+  var m=document.getElementById('nav-mobile');
+  var o=document.getElementById('nav-overlay');
+  var c=document.getElementById('nav-mobile-close');
+  function open(){m.classList.add('is-open');o.classList.add('is-open');h.setAttribute('aria-expanded','true');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){m.classList.remove('is-open');o.classList.remove('is-open');h.setAttribute('aria-expanded','false');m.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  h.addEventListener('click',open);
+  c.addEventListener('click',close);
+  o.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
 </body>
 </html>

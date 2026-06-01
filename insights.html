@@ -27,8 +27,7 @@
 <header class="site-header container">
   <nav class="nav" aria-label="Primary">
     <a href="/" class="brand" aria-label="Nira Dental Abroad - Home">
-      <img class="brand-logo" src="/nira-wordmark.svg" alt="Nira" width="790" height="358" />
-      <span class="tag">DENTAL ABROAD</span>
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
     </a>
     <div class="nav-links">
       <a href="/services">Services</a>
@@ -38,29 +37,51 @@
       <a href="/insights" class="is-current">Insights</a>
       <a href="/#faq">FAQ</a>
     </div>
-    <a href="/calculator" class="btn btn--primary">Compare Your Quote</a>
+    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </nav>
 </header>
+<div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+  <div class="nav-mobile-top">
+    <a href="/" class="brand" aria-label="Nira Dental Abroad">
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
+    </a>
+    <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="nav-mobile-links">
+    <a href="/services">Services</a>
+    <a href="/compare#countries">Countries</a>
+    <a href="/calculator">Calculator</a>
+    <a href="/compare">Compare</a>
+    <a href="/insights">Insights</a>
+    <a href="/#faq">FAQ</a>
+  </nav>
+  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+</div>
+<div class="nav-overlay" id="nav-overlay"></div>
 <section class="container hero">
   <div class="hero-copy">
     <div class="rule"></div>
     <div class="eyebrow">Insights</div>
     <h1>Clear guidance before you travel.</h1>
     <p class="lede">Read practical explainers on dental care abroad costs, safety, planning, and how to compare destination options.</p>
-    <div class="hero-actions"><a href="/calculator" class="btn btn--primary">Compare Your Quote</a><a href="/services" class="btn btn--ghost">Explore Services</a></div>
+    <div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/services" class="btn btn--ghost">Explore Services</a></div>
   </div>
   <div class="hero-art" aria-hidden="true">
     <div class="stat"><strong>3</strong><span>starter guides</span></div><div class="stat"><strong>Cost</strong><span>pricing clarity</span></div><div class="stat"><strong>Safety</strong><span>provider due diligence</span></div>
   </div>
 </section>
 <section class="band"><div class="container"><div class="grid grid--3"><article class="card"><div class="kicker">Costs</div><h3>How Much Does Dental Care Abroad Cost?</h3><p>A practical guide to what changes pricing, why quotes vary, and how to compare U.S. and international options.</p><div class="card-actions"><a href="/insights/dental-care-abroad-costs" class="btn btn--ghost">Read article</a></div></article><article class="card"><div class="kicker">Safety</div><h3>Is Dental Care Abroad Safe?</h3><p>What patients should check before choosing a destination clinic, provider, or dental travel coordinator.</p><div class="card-actions"><a href="/insights/is-dental-care-abroad-safe" class="btn btn--ghost">Read article</a></div></article><article class="card"><div class="kicker">Planning</div><h3>How to Plan a Dental Travel Trip</h3><p>A step-by-step look at quote review, virtual consults, travel timing, recovery, and aftercare.</p><div class="card-actions"><a href="/insights/how-to-plan-dental-travel" class="btn btn--ghost">Read article</a></div></article></div></div></section>
-<section class="cta"><div class="container cta-inner"><div><h2>Prefer numbers first?</h2><p>Use the calculator to turn article context into a planning estimate.</p></div><div class="hero-actions"><a href="/calculator" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
+<section class="cta"><div class="container cta-inner"><div><h2>Prefer numbers first?</h2><p>Use the calculator to turn article context into a planning estimate.</p></div><div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
 <footer class="site-footer">
   <div class="container">
     <div class="foot-top">
       <div class="foot-brand">
-        <img class="foot-logo" src="/nira-wordmark-light.svg" alt="Nira" width="790" height="358" />
-        <div class="tag">DENTAL ABROAD</div>
+        <img class="foot-logo" src="/nira-logo-dental-abroad-light.svg" alt="Nira Dental Abroad" width="790" height="475" />
       </div>
       <div class="foot-col">
         <h5>Services</h5>
@@ -91,5 +112,20 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var h=document.getElementById('nav-hamburger');
+  var m=document.getElementById('nav-mobile');
+  var o=document.getElementById('nav-overlay');
+  var c=document.getElementById('nav-mobile-close');
+  function open(){m.classList.add('is-open');o.classList.add('is-open');h.setAttribute('aria-expanded','true');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){m.classList.remove('is-open');o.classList.remove('is-open');h.setAttribute('aria-expanded','false');m.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  h.addEventListener('click',open);
+  c.addEventListener('click',close);
+  o.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
 </body>
 </html>

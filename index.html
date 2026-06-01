@@ -92,19 +92,7 @@ a{color:inherit;text-decoration:none}
   padding:28px 0 18px;
 }
 .brand{display:flex;flex-direction:column;line-height:1;text-decoration:none}
-.brand-wm{
-  position:relative;
-  display:inline-block;
-  padding-top:0;
-  line-height:1;
-}
 .brand-logo{width:118px;height:auto;display:block}
-.brand .tag{
-  font-family:var(--f-sans);
-  font-size:9.5px;letter-spacing:.34em;
-  color:var(--charcoal-2);
-  margin-top:-2px;font-weight:500;
-}
 .nav-links{display:flex;gap:34px}
 .nav-links a{
   font-size:14.5px;font-weight:500;color:var(--charcoal-2);
@@ -116,6 +104,44 @@ a{color:inherit;text-decoration:none}
   transition:transform .25s ease;
 }
 .nav-links a:hover::after{transform:scaleX(1)}
+.nav-hamburger{
+  display:none;background:none;border:none;cursor:pointer;
+  padding:6px;border-radius:4px;align-items:center;justify-content:center;
+}
+.nav-hamburger svg{width:22px;height:22px;stroke:var(--charcoal)}
+/* Mobile nav drawer */
+.nav-mobile{
+  background:var(--cream);bottom:0;display:flex;flex-direction:column;
+  gap:0;left:0;padding:24px 28px 40px;position:fixed;right:0;top:0;
+  transform:translateX(-100%);transition:transform .3s ease;z-index:300;
+}
+.nav-mobile.is-open{transform:translateX(0)}
+.nav-mobile-top{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:36px;
+}
+.nav-mobile-close{
+  background:none;border:none;cursor:pointer;padding:6px;
+  border-radius:4px;display:flex;align-items:center;
+}
+.nav-mobile-close svg{width:22px;height:22px;stroke:var(--charcoal)}
+.nav-mobile-links{
+  display:flex;flex-direction:column;flex:1;
+}
+.nav-mobile-links a{
+  border-bottom:1px solid var(--line);color:var(--charcoal);
+  font-family:var(--f-sans);font-size:18px;font-weight:500;
+  padding:16px 0;text-decoration:none;
+  transition:color .15s ease;
+}
+.nav-mobile-links a:hover{color:var(--copper)}
+.nav-mobile .btn{margin-top:32px;width:100%;justify-content:center}
+.nav-overlay{
+  background:rgba(44,42,38,.45);bottom:0;left:0;opacity:0;
+  pointer-events:none;position:fixed;right:0;top:0;
+  transition:opacity .3s ease;z-index:299;
+}
+.nav-overlay.is-open{opacity:1;pointer-events:all}
 
 /* ============ Hero ============ */
 .hero{
@@ -255,9 +281,7 @@ a{color:inherit;text-decoration:none}
 .source-link:hover{color:var(--copper-dark);border-color:var(--copper-dark)}
 
 .chart-card{
-  background:var(--cream-card);
-  border:1px solid var(--line);
-  border-radius:var(--r-sm);
+  background:transparent;
   padding:28px 30px 22px;
 }
 .chart-title{
@@ -683,35 +707,19 @@ a{color:inherit;text-decoration:none}
 
 /* ============ Beach CTA ============ */
 .beach-cta{
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  align-items: stretch;
-  min-height: 320px;
+  background: linear-gradient(105deg,
+    #C9A47A 0%, #D8B894 24%, #EAE0D0 52%,
+    #F2EAD6 72%, #F4ECDA 100%);
   overflow: hidden;
-  background: linear-gradient(95deg,
-    #C9A47A 0%, #D8B894 22%, #E9D7BC 42%,
-    #F2EAD6 58%, #F4ECDA 100%);
-}
-.beach-photo{
+  padding: 80px 36px;
   position: relative;
-  min-height: 320px;
-  background:
-    linear-gradient(115deg, rgba(44,42,38,.18) 0%, rgba(44,42,38,0) 55%),
-    url('https://images.unsplash.com/photo-1546961342-1e2d2b8edeed?auto=format&fit=crop&w=900&q=80')
-    center / cover;
-}
-/* Decorative sand & ocean if photo fails */
-.beach-photo::before{
-  content: ""; position: absolute; inset: 0;
-  background:
-    linear-gradient(180deg, #DDC9A6 0%, #E7D8B8 35%, #C9B488 70%, #B89F70 100%);
-  z-index: -1;
+  text-align: center;
 }
 .beach-content{
-  padding: 56px 70px 56px 50px;
-  text-align: center;
+  margin: 0 auto;
+  max-width: 580px;
   position: relative;
+  z-index: 1;
 }
 .beach-content h3{
   font-family: var(--f-serif); font-weight: 500;
@@ -733,16 +741,6 @@ a{color:inherit;text-decoration:none}
 .beach-cta-actions{
   display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
 }
-.beach-leaf{
-  position: absolute; right: 30px; top: 50%;
-  transform: translateY(-50%);
-  opacity: .32; pointer-events: none;
-}
-.beach-leaf svg{
-  width: 220px; height: auto;
-  stroke: var(--copper); fill: none;
-  stroke-width: .9;
-}
 
 /* ============ Site Footer (columned) ============ */
 .site-footer{
@@ -758,20 +756,7 @@ a{color:inherit;text-decoration:none}
   border-bottom: 1px solid rgba(255,255,255,.16);
   align-items: start;
 }
-.foot-brand-wm{
-  position: relative;
-  display: inline-block;
-  padding-top: 0;
-  line-height: 1;
-  margin-bottom: 0;
-}
 .foot-logo{width:138px;height:auto;display:block}
-.foot-brand .tag{
-  font-family: var(--f-sans);
-  font-size: 9.5px; letter-spacing: .34em; font-weight: 500;
-  color: rgba(255,255,255,.78);
-  margin-bottom: 24px;
-}
 .foot-social{display: flex; gap: 10px}
 .foot-social a,
 .foot-social .social-link{
@@ -886,6 +871,8 @@ a{color:inherit;text-decoration:none}
 }
 @media (max-width: 900px){
   .nav-links{display:none}
+  .nav-cta-btn{display:none}
+  .nav-hamburger{display:flex}
   .hero{grid-template-columns:1fr;gap:36px;padding-bottom:30px}
   .hero h1{font-size:42px}
   .features{grid-template-columns:repeat(2,1fr);gap:24px 0}
@@ -905,15 +892,11 @@ a{color:inherit;text-decoration:none}
   .testimonials-inner,.faq-inner{grid-template-columns:1fr;gap:26px}
   .test-cards{grid-template-columns:1fr;gap:14px}
   .faq-grid{grid-template-columns:1fr;gap:0}
-  .beach-cta{grid-template-columns:1fr}
-  .beach-photo{min-height:220px}
-  .beach-content{padding:40px 28px}
-  .beach-leaf{display:none}
+  .beach-cta{padding:56px 24px}
 }
 @media (max-width: 540px){
   .container{padding:0 22px}
   .nav{padding:22px 0 8px}
-  .nav > .btn{display:none}
   .brand-logo{width:108px}
   .brand .tag{font-size:8.5px;letter-spacing:.26em}
   .btn{padding:12px 18px;font-size:13.5px}
@@ -938,6 +921,7 @@ a{color:inherit;text-decoration:none}
   .foot-top{grid-template-columns:1fr;gap:30px}
   .foot-copy{justify-content:flex-start;text-align:left}
   .foot-promise{flex-direction:column;gap:10px}
+  .chart-card{margin:0 -22px;padding:14px 0 10px}
 }
 
 /* ============ Subtle entrance animation ============ */
@@ -1209,10 +1193,7 @@ a{color:inherit;text-decoration:none}
 <header class="container">
   <nav class="nav" aria-label="Primary">
     <a href="/" class="brand" aria-label="Nira Dental Abroad — Home">
-      <span class="brand-wm">
-        <img class="brand-logo" src="/nira-wordmark.svg" alt="Nira" width="790" height="358" />
-      </span>
-      <span class="tag">DENTAL ABROAD</span>
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
     </a>
     <div class="nav-links">
       <a href="/services">Services</a>
@@ -1222,9 +1203,34 @@ a{color:inherit;text-decoration:none}
       <a href="/insights">Insights</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="/calculator" class="btn btn--primary">Compare Your Quote</a>
+    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </nav>
 </header>
+
+<!-- Mobile nav -->
+<div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+  <div class="nav-mobile-top">
+    <a href="/" class="brand" aria-label="Nira Dental Abroad">
+      <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
+    </a>
+    <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="nav-mobile-links">
+    <a href="/services">Services</a>
+    <a href="/compare#countries">Countries</a>
+    <a href="/calculator">Calculator</a>
+    <a href="/compare">Compare</a>
+    <a href="/insights">Insights</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+</div>
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <!-- ============================ HERO ============================ -->
 <section class="container">
@@ -1240,7 +1246,7 @@ a{color:inherit;text-decoration:none}
         vetted providers, and high-touch travel support designed around you.
       </p>
       <div class="hero-cta">
-        <a href="/calculator" class="btn btn--primary">Compare Your Quote</a>
+        <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
         <a href="#how" class="btn btn--ghost">
           See How It Works
           <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -1324,7 +1330,7 @@ a{color:inherit;text-decoration:none}
       </div>
 
       <!-- ============== Inline CPI Chart ============== -->
-      <svg viewBox="0 0 640 320" role="img" aria-label="Line chart comparing dental services price growth versus overall consumer prices from 1975 to 2024" style="width:100%;height:auto;display:block">
+      <svg id="cpi-chart" viewBox="0 0 760 320" role="img" aria-label="Line chart comparing dental services price growth versus overall consumer prices from 1975 to 2024" style="width:100%;height:auto;display:block">
         <defs>
           <linearGradient id="copperFill" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0%" stop-color="#A46F52" stop-opacity=".20"/>
@@ -1339,28 +1345,28 @@ a{color:inherit;text-decoration:none}
         <!-- Y gridlines + labels (0x, 2x, 4x, 6x, 8x, 10x, 12x, 14x) -->
         <g font-family="Montserrat, sans-serif" font-size="11" fill="#8F8E8E">
           <!-- 14x -->
-          <line x1="70" y1="40"  x2="540" y2="40"  stroke="#EDE7DB" stroke-width="1"/>
+          <line x1="70" y1="40"  x2="540" y2="40"  stroke="#C4B9A6" stroke-width="1"/>
           <text x="555" y="44">14x</text>
           <!-- 12x -->
-          <line x1="70" y1="74"  x2="540" y2="74"  stroke="#EDE7DB" stroke-width="1"/>
+          <line x1="70" y1="74"  x2="540" y2="74"  stroke="#C4B9A6" stroke-width="1"/>
           <text x="555" y="78">12x</text>
           <!-- 10x -->
-          <line x1="70" y1="108" x2="540" y2="108" stroke="#EDE7DB" stroke-width="1"/>
+          <line x1="70" y1="108" x2="540" y2="108" stroke="#C4B9A6" stroke-width="1"/>
           <text x="555" y="112">10x</text>
           <!-- 8x -->
-          <line x1="70" y1="142" x2="540" y2="142" stroke="#EDE7DB" stroke-width="1"/>
+          <line x1="70" y1="142" x2="540" y2="142" stroke="#C4B9A6" stroke-width="1"/>
           <text x="555" y="146">8x</text>
           <!-- 6x -->
-          <line x1="70" y1="176" x2="540" y2="176" stroke="#EDE7DB" stroke-width="1"/>
+          <line x1="70" y1="176" x2="540" y2="176" stroke="#C4B9A6" stroke-width="1"/>
           <text x="555" y="180">6x</text>
           <!-- 4x -->
-          <line x1="70" y1="210" x2="540" y2="210" stroke="#EDE7DB" stroke-width="1"/>
+          <line x1="70" y1="210" x2="540" y2="210" stroke="#C4B9A6" stroke-width="1"/>
           <text x="555" y="214">4x</text>
           <!-- 2x -->
-          <line x1="70" y1="244" x2="540" y2="244" stroke="#EDE7DB" stroke-width="1"/>
+          <line x1="70" y1="244" x2="540" y2="244" stroke="#C4B9A6" stroke-width="1"/>
           <text x="555" y="248">2x</text>
           <!-- 0x baseline -->
-          <line x1="70" y1="278" x2="540" y2="278" stroke="#E1DBCC" stroke-width="1"/>
+          <line x1="70" y1="278" x2="540" y2="278" stroke="#B4A990" stroke-width="1"/>
           <text x="555" y="282">0x</text>
         </g>
 
@@ -1404,6 +1410,8 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </section>
+<script>
+</script>
 
 <!-- ============================ HOW IT WORKS ============================ -->
 <section class="container how" id="how">
@@ -1767,7 +1775,7 @@ a{color:inherit;text-decoration:none}
             <div class="test-loc">Chicago, IL</div>
           </div>
           <div class="test-avatar" aria-hidden="true">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=160&h=160&q=80" alt="" onerror="this.remove()"/>
+            <img src="/Sarah.png" alt="Sarah R." />
             <span>S</span>
           </div>
         </div>
@@ -1782,7 +1790,7 @@ a{color:inherit;text-decoration:none}
             <div class="test-loc">Dallas, TX</div>
           </div>
           <div class="test-avatar" aria-hidden="true">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=80" alt="" onerror="this.remove()"/>
+            <img src="/Maria.png" alt="Maria L." />
             <span>M</span>
           </div>
         </div>
@@ -1797,7 +1805,7 @@ a{color:inherit;text-decoration:none}
             <div class="test-loc">Seattle, WA</div>
           </div>
           <div class="test-avatar" aria-hidden="true">
-            <img src="https://images.unsplash.com/photo-1545912452-8aea7e25a3d3?auto=format&fit=crop&w=160&h=160&q=80" alt="" onerror="this.remove()"/>
+            <img src="/Linda.png" alt="Linda T." />
             <span>L</span>
           </div>
         </div>
@@ -1970,7 +1978,7 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
 
-        <a href="/calculator" class="btn btn--primary calc-cta">Get My Personalized Quote</a>
+        <a href="/contact" class="btn btn--primary calc-cta">Get My Personalized Quote</a>
         <p class="calc-disclaimer">Estimates only. Actual quotes vary by case complexity, materials selected, and individual provider. A Nira coordinator will share your final personalized comparison after reviewing your treatment plan.</p>
       </div>
     </div>
@@ -2039,29 +2047,14 @@ a{color:inherit;text-decoration:none}
 
 <!-- ============================ BEACH CTA ============================ -->
 <section class="beach-cta" id="quote" aria-label="Compare your quote">
-  <div class="beach-photo" role="img" aria-label="A relaxed man enjoying the coast"></div>
   <div class="beach-content">
     <h3>Ready for a more beautiful smile?</h3>
     <div class="sub">Premium Dental Care Abroad, Coordinated Simply.</div>
     <p>Get personalized comparisons, vetted provider options, and a thoughtful guide through every step—at no cost to you.</p>
     <div class="beach-cta-actions">
-      <a href="/calculator" class="btn btn--primary">Compare Your Quote</a>
+      <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
       <a href="/calculator" class="btn btn--ghost">Book a Call</a>
     </div>
-    <span class="beach-leaf" aria-hidden="true">
-      <svg viewBox="0 0 240 100">
-        <path d="M10 88 C 60 70, 110 50, 170 38 C 200 32, 220 32, 232 36"/>
-        <path d="M50 78 Q 70 64 92 58"/>
-        <path d="M80 70 Q 102 58 124 52"/>
-        <path d="M115 60 Q 135 50 158 46"/>
-        <path d="M155 50 Q 178 44 202 42"/>
-        <ellipse cx="58" cy="74" rx="11" ry="3.6" transform="rotate(-22 58 74)"/>
-        <ellipse cx="92" cy="62" rx="12" ry="3.8" transform="rotate(-20 92 62)"/>
-        <ellipse cx="128" cy="54" rx="13" ry="4" transform="rotate(-15 128 54)"/>
-        <ellipse cx="166" cy="46" rx="13" ry="4" transform="rotate(-10 166 46)"/>
-        <ellipse cx="202" cy="40" rx="12" ry="3.6" transform="rotate(-6 202 40)"/>
-      </svg>
-    </span>
   </div>
 </section>
 
@@ -2070,10 +2063,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="foot-top">
       <div class="foot-brand">
-        <span class="foot-brand-wm">
-          <img class="foot-logo" src="/nira-wordmark-light.svg" alt="Nira" width="790" height="358" />
-        </span>
-        <div class="tag">DENTAL ABROAD</div>
+        <img class="foot-logo" src="/nira-logo-dental-abroad-light.svg" alt="Nira Dental Abroad" width="790" height="475" />
         <div class="foot-social" aria-label="Social media">
           <span class="social-link" aria-label="Instagram unavailable">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="#fff"/></svg>
@@ -2312,6 +2302,22 @@ a{color:inherit;text-decoration:none}
 
   syncQuantityUI();
   calc();
+})();
+</script>
+
+<script>
+(function(){
+  var hamburger=document.getElementById('nav-hamburger');
+  var menu=document.getElementById('nav-mobile');
+  var overlay=document.getElementById('nav-overlay');
+  var closeBtn=document.getElementById('nav-mobile-close');
+  function open(){menu.classList.add('is-open');overlay.classList.add('is-open');hamburger.setAttribute('aria-expanded','true');menu.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function close(){menu.classList.remove('is-open');overlay.classList.remove('is-open');hamburger.setAttribute('aria-expanded','false');menu.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  hamburger.addEventListener('click',open);
+  closeBtn.addEventListener('click',close);
+  overlay.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
 })();
 </script>
 
