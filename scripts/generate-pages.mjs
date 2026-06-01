@@ -77,7 +77,7 @@ const services = [
     name: "Veneers",
     title: "Veneer Treatment Abroad",
     lede: "Compare natural-looking veneer options with vetted providers abroad and a guided travel plan.",
-    ideal: "Best for patients improving tooth shape, shade, spacing, or visible smile balance.",
+    ideal: "Good fit for patients improving tooth shape, shade, spacing, or visible smile balance.",
     timeline: "Usually 5-7 days for planning, preparation, fitting, and final review.",
     price: "From $400 - $850 per tooth abroad, depending on country, material, and case complexity.",
     faqs: [
@@ -90,7 +90,7 @@ const services = [
     name: "Crowns",
     title: "Crowns Abroad",
     lede: "Explore crown options for damaged, restored, or cosmetically improved teeth with transparent pricing by destination.",
-    ideal: "Best for structurally compromised teeth, older dental work, or cosmetic-restorative improvements.",
+    ideal: "Good fit for structurally compromised teeth, older dental work, or cosmetic-restorative improvements.",
     timeline: "Often 5-7 days for digital planning, preparation, temporary placement, and final crown delivery.",
     price: "From $450 - $950 per crown abroad, compared with materially higher U.S. quotes.",
     faqs: [
@@ -103,7 +103,7 @@ const services = [
     name: "Implants",
     title: "Dental Implants Abroad",
     lede: "Plan implant treatment abroad with a clear view of cost, timeline, travel needs, and follow-up considerations.",
-    ideal: "Best for replacing missing teeth or supporting bridges and larger restorations.",
+    ideal: "Good fit for replacing missing teeth or supporting bridges and larger restorations.",
     timeline: "Often 7-10 days for first-stage work, with some cases split into two trips.",
     price: "From $1,300 - $2,300 per implant abroad, excluding case-specific grafting or restoration needs.",
     faqs: [
@@ -116,7 +116,7 @@ const services = [
     name: "Full-Mouth Restoration",
     title: "Full-Mouth Restoration Abroad",
     lede: "Compare comprehensive restorative treatment plans that combine crowns, implants, veneers, or full-arch solutions.",
-    ideal: "Best for patients with multiple failing teeth, extensive wear, or a complete restorative treatment plan.",
+    ideal: "Good fit for patients with multiple failing teeth, extensive wear, or a complete restorative treatment plan.",
     timeline: "Usually 10-14 days for major single-trip cases, though implant staging can require follow-up.",
     price: "From $11,000 - $23,000 abroad for many major cases, depending on destination and complexity.",
     faqs: [
@@ -129,7 +129,7 @@ const services = [
     name: "Smile Makeovers",
     title: "Smile Makeovers Abroad",
     lede: "Coordinate multi-service smile transformations with transparent options for destination, timeline, and provider match.",
-    ideal: "Best for patients combining cosmetic and restorative goals into one guided treatment journey.",
+    ideal: "Good fit for patients combining cosmetic and restorative goals into one guided treatment journey.",
     timeline: "Often 7-10 days depending on whether veneers, crowns, whitening, implants, or gum contouring are included.",
     price: "From $3,800 - $11,500 abroad for many planned smile makeover cases.",
     faqs: [
@@ -182,14 +182,14 @@ const routes = [
   ...services.map((service) => ({ path: `/services/${service.slug}`, priority: "0.8" })),
   ...countries.map((country) => ({ path: `/countries/${country.slug}`, priority: "0.8" })),
   { path: "/calculator", priority: "0.85" },
-  { path: "/contact", priority: "0.85" },
+  { path: "/quote", priority: "0.85" },
   { path: "/insights", priority: "0.75" },
   ...articles.map((article) => ({ path: `/insights/${article.slug}`, priority: "0.65" })),
 ];
 
 const navItems = [
   { href: "/services", label: "Services", key: "services" },
-  { href: "/compare#countries", label: "Countries", key: "countries" },
+  { href: "/compare#destinations", label: "Destinations", key: "destinations" },
   { href: "/calculator", label: "Calculator", key: "calculator" },
   { href: "/compare", label: "Compare", key: "compare" },
   { href: "/insights", label: "Insights", key: "insights" },
@@ -231,15 +231,39 @@ const navScript = `<script>
 </script>`;
 
 function header(current) {
+  const destinationsCurrent = current === "destinations";
+  const destinationsMenu = `<div class="nav-dropdown-wrap">
+        <a href="/compare#destinations"${destinationsCurrent ? ' class="is-current"' : ""}>Destinations</a>
+        <div class="nav-dropdown" aria-label="Destination links">
+          <a href="/countries/mexico">Mexico</a>
+          <a href="/countries/costa-rica">Costa Rica</a>
+          <a href="/countries/colombia">Colombia</a>
+          <a href="/compare">Compare All Destinations</a>
+        </div>
+      </div>`;
+  const desktopNav = navItems.map((item) => item.key === "destinations"
+    ? destinationsMenu
+    : `<a href="${item.href}"${item.key === current ? ' class="is-current"' : ""}>${item.label}</a>`
+  ).join("\n      ");
+  const mobileNav = navItems.map((item) => item.key === "destinations"
+    ? `<details class="nav-mobile-group">
+      <summary>Destinations</summary>
+      <a href="/countries/mexico">Mexico</a>
+      <a href="/countries/costa-rica">Costa Rica</a>
+      <a href="/countries/colombia">Colombia</a>
+      <a href="/compare">Compare All Destinations</a>
+    </details>`
+    : `<a href="${item.href}">${item.label}</a>`
+  ).join("\n    ");
   return `<header class="site-header container">
   <nav class="nav" aria-label="Primary">
     <a href="/" class="brand" aria-label="Nira Dental Abroad - Home">
       <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
     </a>
     <div class="nav-links">
-      ${navItems.map((item) => `<a href="${item.href}"${item.key === current ? ' class="is-current"' : ""}>${item.label}</a>`).join("\n      ")}
+      ${desktopNav}
     </div>
-    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <a href="/quote" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -255,9 +279,9 @@ function header(current) {
     </button>
   </div>
   <nav class="nav-mobile-links">
-    ${navItems.map((item) => `<a href="${item.href}">${item.label}</a>`).join("\n    ")}
+    ${mobileNav}
   </nav>
-  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+  <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
 </div>
 <div class="nav-overlay" id="nav-overlay"></div>`;
 }
@@ -274,13 +298,13 @@ function footer() {
         <ul>${services.map((item) => `<li><a href="/services/${item.slug}">${item.name}</a></li>`).join("")}</ul>
       </div>
       <div class="foot-col">
-        <h5>Countries</h5>
+        <h5>Destinations</h5>
         <ul>${countries.map((item) => `<li><a href="/countries/${item.slug}">${item.name}</a></li>`).join("")}</ul>
       </div>
       <div class="foot-col">
         <h5>Resources</h5>
         <ul>
-          <li><a href="/compare">Compare Countries</a></li>
+          <li><a href="/compare">Compare Destinations</a></li>
           <li><a href="/calculator">Calculator</a></li>
           <li><a href="/insights">Insights</a></li>
         </ul>
@@ -288,9 +312,9 @@ function footer() {
       <div class="foot-col">
         <h5>Support</h5>
         <ul>
-          <li><a href="/calculator">Compare Your Quote</a></li>
+          <li><a href="/quote">Compare Your Quote</a></li>
           <li><a href="/#faq">FAQ</a></li>
-          <li><a href="/#quote">Contact</a></li>
+          <li><a href="/quote">Quote Review</a></li>
         </ul>
       </div>
     </div>
@@ -344,7 +368,7 @@ function pageHero({ eyebrow, title, lede, actions = true, stats = [] }) {
     <div class="eyebrow">${esc(eyebrow)}</div>
     <h1>${esc(title)}</h1>
     <p class="lede">${esc(lede)}</p>
-    ${actions ? `<div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/services" class="btn btn--ghost">Explore Services</a></div>` : ""}
+    ${actions ? `<div class="hero-actions"><a href="/quote" class="btn btn--primary">Compare Your Quote</a><a href="/services" class="btn btn--ghost">Explore Services</a></div>` : ""}
   </div>
   <div class="hero-art" aria-hidden="true">
     ${stats.map((stat) => `<div class="stat"><strong>${esc(stat.value)}</strong><span>${esc(stat.label)}</span></div>`).join("")}
@@ -382,6 +406,27 @@ function comparePage() {
   const dollarIco = `<svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`;
   const phoneIco = `<svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.55 5.55l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
 
+  const usRow = `<div class="ctable-row ctable-row--us">
+  <div class="ctable-dest">
+    <span class="ci ci--us">US</span>
+    <div>
+      <h3>United States</h3>
+      <span class="ctable-cities">${pinIco}Local and major metro markets</span>
+    </div>
+  </div>
+  <div class="ctable-savings">
+    <div class="ctable-pct">Baseline</div>
+    <div class="ctable-vs">highest cost market</div>
+  </div>
+  <div class="ctable-bf">
+    <span class="bf-ico">${dollarIco}</span>
+    <div>
+      <div class="bf-label">Convenience</div>
+      <div class="bf-desc">Local access<br>Higher specialist pricing</div>
+    </div>
+  </div>
+</div>`;
+
   const tableRows = countries.map((c) => {
     const d = display[c.slug];
     const savings = c.savings.replace("-", "–");
@@ -413,14 +458,14 @@ function comparePage() {
     pagePath: "/compare",
     current: "compare",
     main: `
-<section class="compare-split container" id="countries">
+<section class="compare-split container" id="destinations">
   <div class="compare-text">
     <div class="rule"></div>
-    <div class="eyebrow">Country Comparison</div>
+    <div class="eyebrow">Destination Comparison</div>
     <h1>Compare dental destinations before you choose.</h1>
-    <p class="lede">See how Mexico, Costa Rica, and Colombia compare with U.S. dental costs, treatment timelines, and travel comfort.</p>
+    <p class="lede">See how the U.S., Mexico, Costa Rica, and Colombia compare on cost, treatment timeline, and travel fit.</p>
     <div class="hero-actions">
-      <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+      <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
       <a href="/services" class="btn btn--ghost">Explore Services</a>
     </div>
     <div class="trust-strip">
@@ -431,7 +476,7 @@ function comparePage() {
       <div class="trust-sep"></div>
       <div class="trust-item">
         <span class="trust-ico">${dollarIco}</span>
-        <div><strong>Transparent Savings</strong><span>Real numbers. No hidden fees.</span></div>
+        <div><strong>Transparent Savings</strong><span>Clear ranges and no hidden fees.</span></div>
       </div>
       <div class="trust-sep"></div>
       <div class="trust-item">
@@ -444,19 +489,20 @@ function comparePage() {
   <div class="ctable-wrap">
     <div class="ctable-card">
       <div class="ctable-head">
-        <span>Destination</span>
+        <span>Market</span>
         <span>Typical Savings</span>
-        <span>Best For</span>
+        <span>Good Fit If</span>
       </div>
+      ${usRow}
       ${tableRows}
       <div class="ctable-foot">
         ${shieldIco}
-        All destinations are carefully vetted for quality, safety, and patient experience.
+        U.S. pricing is the baseline. LATAM destinations can lower clinical costs, while Nira adds a small coordination layer for provider matching, planning, and travel support.
       </div>
     </div>
   </div>
 </section>
-${ctaBlock("Have a treatment plan already?", "Use the calculator to compare your specific treatment type across all three destinations.")}`,
+${ctaBlock("Have a treatment plan already?", "Use the calculator to compare your treatment type across the U.S. baseline and all three destinations.")}`,
   });
 }
 
@@ -479,11 +525,11 @@ function servicesHub() {
     "smile-makeovers": "From $3,800–$15,000 abroad",
   };
   const selectorData = {
-    veneers:                  { timeline: "5–7 days",  savings: "50%–70%", dest: "Mexico, Costa Rica, Colombia & more" },
-    crowns:                   { timeline: "5–7 days",  savings: "50%–70%", dest: "Mexico, Costa Rica, Colombia & more" },
-    implants:                 { timeline: "7–10 days", savings: "50%–75%", dest: "Mexico, Costa Rica, Colombia & more" },
-    "full-mouth-restoration": { timeline: "10–14 days",savings: "55%–75%", dest: "Mexico, Costa Rica, Colombia & more" },
-    "smile-makeovers":        { timeline: "7–10 days", savings: "50%–70%", dest: "Mexico, Costa Rica, Colombia & more" },
+    veneers:                  { timeline: "5–7 days",  savings: "50%–70%", dest: "Mexico, Costa Rica, Colombia" },
+    crowns:                   { timeline: "5–7 days",  savings: "50%–70%", dest: "Mexico, Costa Rica, Colombia" },
+    implants:                 { timeline: "7–10 days", savings: "50%–75%", dest: "Mexico, Costa Rica, Colombia" },
+    "full-mouth-restoration": { timeline: "10–14 days",savings: "55%–75%", dest: "Mexico, Costa Rica, Colombia" },
+    "smile-makeovers":        { timeline: "7–10 days", savings: "50%–70%", dest: "Mexico, Costa Rica, Colombia" },
   };
 
   const clockIco  = `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>`;
@@ -544,7 +590,7 @@ function servicesHub() {
     <h1>Plan your dental treatment abroad with confidence.</h1>
     <p class="lede">Compare treatment options, timelines, pricing ranges, and destination fit before you request a quote.</p>
     <div class="hero-actions">
-      <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+      <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
       <a href="#treatments" class="btn btn--ghost">View Treatments</a>
     </div>
   </div>
@@ -577,7 +623,7 @@ function servicesHub() {
         ${globeIco}
         <div>
           <div class="sh-stat-label">Popular Destinations</div>
-          <div class="sh-stat-val" id="sh-dest">Mexico, Costa Rica, Colombia &amp; more</div>
+          <div class="sh-stat-val" id="sh-dest">Mexico, Costa Rica, Colombia</div>
         </div>
       </div>
     </div>
@@ -607,10 +653,10 @@ function servicePage(service) {
 
   const ext = {
     veneers:                { fit: "Great for minor chips, gaps, discoloration, and smile enhancement.", timelineShort: "Usually 5–7 days", timelineDetail: "for planning, preparation, fitting, and final review.", priceShort: "From $400 – $850 per tooth abroad", priceNote: "Varies by country, material, and case complexity.", solutions: "Most patients choose porcelain or Emax veneers for a natural, long-lasting smile. Our partner clinics use premium materials and digital precision.", countryRows: [{ img: "/mexico.jpg", name: "Mexico", price: "$400 – $850", window: "5 – 7 days", why: "High-quality care with excellent value" }, { img: "/costa-rica.jpg", name: "Costa Rica", price: "$500 – $850", window: "5 – 7 days", why: "Top clinics with strong patient experience" }, { img: "/colombia.jpg", name: "Colombia", price: "$400 – $800", window: "5 – 7 days", why: "Skilled dentists and modern technology" }] },
-    crowns:                 { fit: "Best for damaged, restored, or cosmetically improved teeth.", timelineShort: "Often 5–7 days", timelineDetail: "for planning, preparation, temporary placement, and delivery.", priceShort: "From $450 – $950 per crown abroad", priceNote: "Varies by country, material, and case complexity.", solutions: "Zirconia and E-max crowns are the most popular for strength and aesthetics. Digital planning ensures a precise fit on the first visit.", countryRows: [{ img: "/mexico.jpg", name: "Mexico", price: "$450 – $850", window: "5 – 7 days", why: "High-quality care with excellent value" }, { img: "/costa-rica.jpg", name: "Costa Rica", price: "$550 – $950", window: "5 – 7 days", why: "Top clinics with strong patient experience" }, { img: "/colombia.jpg", name: "Colombia", price: "$450 – $750", window: "5 – 7 days", why: "Skilled dentists and modern technology" }] },
-    implants:               { fit: "Best for replacing missing teeth or supporting bridges and restorations.", timelineShort: "Often 7–10 days", timelineDetail: "for first-stage work; some cases require a second trip.", priceShort: "From $1,300 – $2,300 per implant abroad", priceNote: "Excludes case-specific grafting or restoration needs.", solutions: "Titanium implants with ceramic crowns are the standard. Healing timelines vary, and some cases require bone grafting before placement.", countryRows: [{ img: "/mexico.jpg", name: "Mexico", price: "$1,400 – $2,100", window: "7 – 10 days", why: "High-quality care with excellent value" }, { img: "/costa-rica.jpg", name: "Costa Rica", price: "$1,600 – $2,300", window: "7 – 10 days", why: "Top clinics with strong patient experience" }, { img: "/colombia.jpg", name: "Colombia", price: "$1,300 – $1,900", window: "7 – 10 days", why: "Skilled dentists and modern technology" }] },
-    "full-mouth-restoration":{ fit: "Best for patients with multiple failing teeth or a full restorative plan.", timelineShort: "Usually 10–14 days", timelineDetail: "for major single-trip cases; implant staging may require follow-up.", priceShort: "From $11,000 – $23,000 abroad", priceNote: "Depends on destination and case complexity.", solutions: "Most full-mouth cases combine implants, crowns, and sometimes veneers. A digital treatment plan before travel reduces chair time significantly.", countryRows: [{ img: "/mexico.jpg", name: "Mexico", price: "$12,500 – $21,000", window: "10 – 14 days", why: "High-quality care with excellent value" }, { img: "/costa-rica.jpg", name: "Costa Rica", price: "$14,500 – $23,000", window: "10 – 14 days", why: "Top clinics with strong patient experience" }, { img: "/colombia.jpg", name: "Colombia", price: "$11,000 – $19,000", window: "10 – 14 days", why: "Skilled dentists and modern technology" }] },
-    "smile-makeovers":      { fit: "Best for patients combining cosmetic and restorative goals in one guided journey.", timelineShort: "Often 7–10 days", timelineDetail: "depending on services included in the treatment plan.", priceShort: "From $3,800 – $15,000 abroad", priceNote: "Varies widely by treatment combination.", solutions: "Smile makeovers vary widely because every plan is different. The most common combination is veneers plus whitening, sometimes with gum contouring.", countryRows: [{ img: "/mexico.jpg", name: "Mexico", price: "$3,800 – $11,500", window: "7 – 10 days", why: "High-quality care with excellent value" }, { img: "/costa-rica.jpg", name: "Costa Rica", price: "$4,500 – $12,500", window: "7 – 10 days", why: "Top clinics with strong patient experience" }, { img: "/colombia.jpg", name: "Colombia", price: "$3,500 – $10,500", window: "7 – 10 days", why: "Skilled dentists and modern technology" }] },
+    crowns:                 { fit: "Good fit for damaged, restored, or cosmetically improved teeth.", timelineShort: "Often 5-7 days", timelineDetail: "for planning, preparation, temporary placement, and delivery.", priceShort: "From $450 - $950 per crown abroad", priceNote: "Varies by country, material, and case complexity.", solutions: "Zirconia and E-max crowns are popular for strength and aesthetics. Digital planning helps providers prepare a precise fit before the final visit.", countryRows: [{ img: "/mexico.jpg", name: "Mexico", price: "$450 - $850", window: "5 - 7 days", why: "High-quality care with excellent value" }, { img: "/costa-rica.jpg", name: "Costa Rica", price: "$550 - $950", window: "5 - 7 days", why: "Top clinics with strong patient experience" }, { img: "/colombia.jpg", name: "Colombia", price: "$450 - $750", window: "5 - 7 days", why: "Skilled dentists and modern technology" }] },
+    implants:               { fit: "Good fit for replacing missing teeth or supporting bridges and restorations.", timelineShort: "Often 7-10 days", timelineDetail: "for first-stage work; some cases require a second trip.", priceShort: "From $1,300 - $2,300 per implant abroad", priceNote: "Excludes case-specific grafting or restoration needs.", solutions: "Titanium implants with ceramic crowns are the standard. Healing timelines vary, and some cases require bone grafting before placement.", countryRows: [{ img: "/mexico.jpg", name: "Mexico", price: "$1,400 - $2,100", window: "7 - 10 days", why: "High-quality care with excellent value" }, { img: "/costa-rica.jpg", name: "Costa Rica", price: "$1,600 - $2,300", window: "7 - 10 days", why: "Top clinics with strong patient experience" }, { img: "/colombia.jpg", name: "Colombia", price: "$1,300 - $1,900", window: "7 - 10 days", why: "Skilled dentists and modern technology" }] },
+    "full-mouth-restoration":{ fit: "Good fit for patients with multiple failing teeth or a full restorative plan.", timelineShort: "Usually 10-14 days", timelineDetail: "for major single-trip cases; implant staging may require follow-up.", priceShort: "From $11,000 - $23,000 abroad", priceNote: "Depends on destination and case complexity.", solutions: "Most full-mouth cases combine implants, crowns, and sometimes veneers. A digital treatment plan before travel can reduce chair time significantly.", countryRows: [{ img: "/mexico.jpg", name: "Mexico", price: "$12,500 - $21,000", window: "10 - 14 days", why: "High-quality care with excellent value" }, { img: "/costa-rica.jpg", name: "Costa Rica", price: "$14,500 - $23,000", window: "10 - 14 days", why: "Top clinics with strong patient experience" }, { img: "/colombia.jpg", name: "Colombia", price: "$11,000 - $19,000", window: "10 - 14 days", why: "Skilled dentists and modern technology" }] },
+    "smile-makeovers":      { fit: "Good fit for patients combining cosmetic and restorative goals in one guided journey.", timelineShort: "Often 7-10 days", timelineDetail: "depending on services included in the treatment plan.", priceShort: "From $3,800 - $15,000 abroad", priceNote: "Varies widely by treatment combination.", solutions: "Smile makeovers vary widely because every plan is different. A common combination is veneers plus whitening, sometimes with gum contouring.", countryRows: [{ img: "/mexico.jpg", name: "Mexico", price: "$3,800 - $11,500", window: "7 - 10 days", why: "High-quality care with excellent value" }, { img: "/costa-rica.jpg", name: "Costa Rica", price: "$4,500 - $12,500", window: "7 - 10 days", why: "Top clinics with strong patient experience" }, { img: "/colombia.jpg", name: "Colombia", price: "$3,500 - $10,500", window: "7 - 10 days", why: "Skilled dentists and modern technology" }] },
   };
 
   const d = ext[service.slug];
@@ -643,7 +689,7 @@ function servicePage(service) {
     <h1>${esc(service.title)}</h1>
     <p class="lede">${esc(service.lede)}</p>
     <div class="hero-actions">
-      <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+      <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
       <a href="/services" class="btn btn--ghost">Explore Services</a>
     </div>
   </div>
@@ -737,7 +783,7 @@ function countryPage(country) {
     title: `${country.title} | Nira Dental Abroad`,
     description: country.lede,
     pagePath: `/countries/${country.slug}`,
-    current: "countries",
+    current: "destinations",
     main: `${pageHero({
       eyebrow: "Country guide",
       title: country.title,
@@ -832,7 +878,7 @@ function calculatorPage() {
         <div>
           <div class="ch-feat-num">4</div>
           <div class="ch-feat-label">markets compared</div>
-          <div class="ch-feat-desc">U.S., Mexico, Costa Rica, Colombia &amp; more.</div>
+          <div class="ch-feat-desc">U.S., Mexico, Costa Rica, Colombia.</div>
         </div>
       </div>
       <hr class="ch-divider"/>
@@ -841,7 +887,7 @@ function calculatorPage() {
         <div>
           <div class="ch-feat-num">5</div>
           <div class="ch-feat-label">treatment types</div>
-          <div class="ch-feat-desc">Crowns, Implants, Veneers, All-on-4 &amp; more.</div>
+          <div class="ch-feat-desc">Crowns, Implants, Veneers, All-on-4.</div>
         </div>
       </div>
       <hr class="ch-divider"/>
@@ -880,9 +926,9 @@ function calculatorMarkup() {
   </div>
   <div class="calc-results">
     <div class="calc-result-row"><strong>United States</strong><span data-out="us">$12,000 - $22,400</span></div>
-    <div class="calc-result-row"><strong>Colombia</strong><span data-out="colombia">$3,200 - $5,200</span></div>
-    <div class="calc-result-row"><strong>Costa Rica</strong><span data-out="costarica">$4,000 - $6,800</span></div>
-    <div class="calc-result-row"><strong>Mexico</strong><span data-out="mexico">$3,200 - $6,000</span></div>
+    <div class="calc-result-row"><strong>Colombia <small>max savings</small></strong><span data-out="colombia">$3,200 - $5,200</span></div>
+    <div class="calc-result-row"><strong>Costa Rica <small>mix of both</small></strong><span data-out="costarica">$4,000 - $6,800</span></div>
+    <div class="calc-result-row"><strong>Mexico <small>shortest trip</small></strong><span data-out="mexico">$3,200 - $6,000</span></div>
     <div class="calc-summary">
       <div><div class="summary-label">Estimated Savings</div><div class="summary-value" data-out="savings">$6,800 - $19,200</div></div>
       <div><div class="summary-label">Trip Duration</div><div class="summary-value" data-out="duration">5-7 days</div></div>
@@ -934,13 +980,13 @@ function articlePage(article) {
         { value: "Nira", label: "planning perspective" },
       ],
     })}
-<section class="band"><div class="container"><article class="body-copy">${article.body.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}<h2>What to do next</h2><ul><li>Collect your current quote, treatment plan, or photos.</li><li>Compare destination fit before focusing only on price.</li><li>Use the calculator to estimate ranges before requesting a personalized review.</li></ul><div class="card-actions"><a href="/calculator" class="btn btn--primary">Open Calculator</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></article></div></section>
+<section class="band"><div class="container"><article class="body-copy">${article.body.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}<h2>What to do next</h2><ul><li>Collect your current quote, treatment plan, or photos.</li><li>Compare destination fit before focusing only on price.</li><li>Use the quote form to request a personalized review.</li></ul><div class="card-actions"><a href="/quote" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Destinations</a></div></article></div></section>
 <section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow">More insights</div><h2>Keep planning.</h2></div><p>Use these starter articles to understand the decision before choosing a provider or destination.</p></div><div class="grid grid--2">${related}</div></div></section>`,
   });
 }
 
 function ctaBlock(title, copy) {
-  return `<section class="cta"><div class="container cta-inner"><div><h2>${esc(title)}</h2><p>${esc(copy)}</p></div><div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>`;
+  return `<section class="cta"><div class="container cta-inner"><div><h2>${esc(title)}</h2><p>${esc(copy)}</p></div><div class="hero-actions"><a href="/quote" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Destinations</a></div></div></section>`;
 }
 
 async function write(routePath, html) {
@@ -953,18 +999,18 @@ for (const generatedDir of ["services", "countries", "insights", "calculator"]) 
   await rm(path.join(root, generatedDir), { recursive: true, force: true });
 }
 
-function contactPage() {
+function quotePage() {
   return layout({
     title: "Compare Your Quote | Nira Dental Abroad",
-    description: "Share your dental quote or treatment plan and a Nira coordinator will reach out with a personalized comparison — at no cost to you.",
-    pagePath: "/contact",
+    description: "Share your dental quote or treatment plan and a Nira coordinator will reach out with a personalized comparison at no cost to you.",
+    pagePath: "/quote",
     current: "",
     main: `
 <section class="contact-hero container">
   <div class="rule"></div>
   <div class="eyebrow">Get Started</div>
   <h1>Compare your dental quote<br/>with confidence.</h1>
-  <p class="lede">Share your details and a Nira coordinator will reach out with a personalized comparison — at no cost to you.</p>
+  <p class="lede">Share your details and a Nira coordinator will reach out with a personalized comparison at no cost to you.</p>
 </section>
 <section class="contact-form-section">
   <div class="container">
@@ -982,7 +1028,7 @@ await write("/services", servicesHub());
 for (const service of services) await write(`/services/${service.slug}`, servicePage(service));
 for (const country of countries) await write(`/countries/${country.slug}`, countryPage(country));
 await write("/calculator", calculatorPage());
-await write("/contact", contactPage());
+await write("/quote", quotePage());
 await write("/insights", insightsHub());
 for (const article of articles) await write(`/insights/${article.slug}`, articlePage(article));
 

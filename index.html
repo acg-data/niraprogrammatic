@@ -4,32 +4,32 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Nira Dental Abroad | Premium Dental Care Abroad</title>
-<meta name="description" content="Premium dental care abroad, coordinated simply. Compare vetted providers, transparent pricing, and high-touch travel support with Nira Dental Abroad." />
+<meta name="description" content="Premium dental care abroad, coordinated simply. Compare vetted providers, clear pricing, and travel support in one guided plan." />
 <link rel="canonical" href="https://nira-9pc.pages.dev/" />
 <meta property="og:site_name" content="Nira Dental Abroad" />
 <meta property="og:title" content="Nira Dental Abroad | Premium Dental Care Abroad" />
-<meta property="og:description" content="Premium dental care abroad, coordinated simply. Compare vetted providers, transparent pricing, and high-touch travel support." />
+<meta property="og:description" content="Premium dental care abroad, coordinated simply. Compare vetted providers, clear pricing, and travel support in one guided plan." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nira-9pc.pages.dev/" />
 <meta property="og:image" content="https://nira-9pc.pages.dev/opengraph.jpg" />
 <meta property="og:image:alt" content="Nira Dental Abroad" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Nira Dental Abroad | Premium Dental Care Abroad" />
-<meta name="twitter:description" content="Premium dental care abroad, coordinated simply. Compare vetted providers, transparent pricing, and high-touch travel support." />
+<meta name="twitter:description" content="Premium dental care abroad, coordinated simply. Compare vetted providers, clear pricing, and travel support in one guided plan." />
 <meta name="twitter:image" content="https://nira-9pc.pages.dev/opengraph.jpg" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-/* ============ Brand tokens — per Nira Brand Book ============ */
+/* ============ Brand tokens - per Nira Brand Book ============ */
 :root{
   /* Core brand palette (exact hex per brand book) */
-  --ivory:        #F3EEE8;  /* Ivory — main background */
-  --sand:         #E8DFD3;  /* Sand — secondary cream */
-  --sage:         #8FA089;  /* Sage — primary brand green */
-  --terracotta:   #A46F52;  /* Terracotta — accent */
-  --olive:        #5B6354;  /* Olive — deep green */
+  --ivory:        #F3EEE8;  /* Ivory - main background */
+  --sand:         #E8DFD3;  /* Sand - secondary cream */
+  --sage:         #8FA089;  /* Sage - primary brand green */
+  --terracotta:   #A46F52;  /* Terracotta - accent */
+  --olive:        #5B6354;  /* Olive - deep green */
 
   /* Working aliases used throughout */
   --cream:        #F3EEE8;
@@ -104,6 +104,42 @@ a{color:inherit;text-decoration:none}
   transition:transform .25s ease;
 }
 .nav-links a:hover::after{transform:scaleX(1)}
+.nav-dropdown-wrap{position:relative;padding:6px 0}
+.nav-dropdown-wrap > a{padding:0 0 6px}
+.nav-dropdown{
+  position:absolute;top:100%;left:50%;z-index:20;
+  min-width:230px;padding:10px;display:grid;gap:4px;
+  background:var(--cream-card);border:1px solid var(--line);
+  border-radius:var(--r-sm);
+  box-shadow:0 22px 46px -32px rgba(44,42,38,.35);
+  opacity:0;pointer-events:none;
+  transform:translate(-50%,8px);
+  transition:opacity .18s ease, transform .18s ease;
+}
+.nav-dropdown a{
+  display:block;padding:10px 12px;border-radius:var(--r-sm);
+  font-size:13px;color:var(--charcoal-2);
+}
+.nav-dropdown a::after{display:none}
+.nav-dropdown a:hover{background:var(--cream);color:var(--charcoal)}
+.nav-dropdown-wrap:hover .nav-dropdown,
+.nav-dropdown-wrap:focus-within .nav-dropdown{
+  opacity:1;pointer-events:auto;transform:translate(-50%,0);
+}
+.nav-mobile-group{
+  border-bottom:1px solid var(--line);
+  padding:8px 0 12px;
+}
+.nav-mobile-group summary{
+  list-style:none;cursor:pointer;
+  font-family:var(--f-sans);font-size:18px;font-weight:500;
+  color:var(--charcoal);padding:8px 0;
+}
+.nav-mobile-group summary::-webkit-details-marker{display:none}
+.nav-mobile-group a{
+  border-bottom:0;color:var(--charcoal-2);
+  font-size:15px;padding:9px 0 9px 16px;
+}
 .nav-hamburger{
   display:none;background:none;border:none;cursor:pointer;
   padding:6px;border-radius:4px;align-items:center;justify-content:center;
@@ -185,7 +221,7 @@ a{color:inherit;text-decoration:none}
 }
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 
-/* Hero image — uses a layered approach so the page still looks lovely
+/* Hero image - uses a layered approach so the page still looks lovely
    if the remote photo fails to load. */
 .hero-media{
   position:relative;
@@ -460,6 +496,12 @@ a{color:inherit;text-decoration:none}
   position: relative;
 }
 .treat-img svg{width: 75%; height: 75%}
+.treat-img svg{display:none}
+.treat-card:nth-child(1) .treat-img{background:linear-gradient(rgba(44,42,38,.08),rgba(44,42,38,.1)),url("/veneers.jpg") center/cover}
+.treat-card:nth-child(2) .treat-img{background:linear-gradient(rgba(44,42,38,.08),rgba(44,42,38,.1)),url("/crowns.jpg") center/cover}
+.treat-card:nth-child(3) .treat-img{background:linear-gradient(rgba(44,42,38,.08),rgba(44,42,38,.1)),url("/Dental%20implants.jpg") center/cover}
+.treat-card:nth-child(4) .treat-img{background:linear-gradient(rgba(44,42,38,.08),rgba(44,42,38,.1)),url("/full%20mouth%20restoration.jpg") center/cover}
+.treat-card:nth-child(5) .treat-img{background:linear-gradient(rgba(44,42,38,.08),rgba(44,42,38,.1)),url("/smile-makeover.jpg") center/cover}
 .treat-label{
   font-family: var(--f-sans);
   font-size: 11.5px; letter-spacing: .22em; font-weight: 600;
@@ -537,6 +579,10 @@ a{color:inherit;text-decoration:none}
   background: linear-gradient(160deg, #CDD7B8, #8FA089 80%);
 }
 .dest-img svg{width: 100%; height: 100%; display: block}
+.dest-img svg{display:none}
+.dest-card:nth-child(1) .dest-img{background:url("/mexico.jpg") center/cover}
+.dest-card:nth-child(2) .dest-img{background:url("/costa-rica.jpg") center/cover}
+.dest-card:nth-child(3) .dest-img{background:url("/colombia.jpg") center/cover}
 .dest-label{
   font-family: var(--f-sans);
   font-size: 11.5px; letter-spacing: .22em; font-weight: 600;
@@ -1192,18 +1238,26 @@ a{color:inherit;text-decoration:none}
 <!-- ============================ NAV ============================ -->
 <header class="container">
   <nav class="nav" aria-label="Primary">
-    <a href="/" class="brand" aria-label="Nira Dental Abroad — Home">
+    <a href="/" class="brand" aria-label="Nira Dental Abroad - Home">
       <img class="brand-logo" src="/nira-logo-dental-abroad-spaced.svg" alt="Nira Dental Abroad" width="790" height="475" />
     </a>
     <div class="nav-links">
       <a href="/services">Services</a>
-      <a href="/compare#countries">Countries</a>
+      <div class="nav-dropdown-wrap">
+        <a href="/compare#destinations">Destinations</a>
+        <div class="nav-dropdown" aria-label="Destination links">
+          <a href="/countries/mexico">Mexico</a>
+          <a href="/countries/costa-rica">Costa Rica</a>
+          <a href="/countries/colombia">Colombia</a>
+          <a href="/compare">Compare All Destinations</a>
+        </div>
+      </div>
       <a href="/calculator">Calculator</a>
       <a href="/compare">Compare</a>
       <a href="/insights">Insights</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <a href="/quote" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -1222,13 +1276,19 @@ a{color:inherit;text-decoration:none}
   </div>
   <nav class="nav-mobile-links">
     <a href="/services">Services</a>
-    <a href="/compare#countries">Countries</a>
+    <details class="nav-mobile-group">
+      <summary>Destinations</summary>
+      <a href="/countries/mexico">Mexico</a>
+      <a href="/countries/costa-rica">Costa Rica</a>
+      <a href="/countries/colombia">Colombia</a>
+      <a href="/compare">Compare All Destinations</a>
+    </details>
     <a href="/calculator">Calculator</a>
     <a href="/compare">Compare</a>
     <a href="/insights">Insights</a>
     <a href="#faq">FAQ</a>
   </nav>
-  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+  <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
 </div>
 <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -1242,11 +1302,11 @@ a{color:inherit;text-decoration:none}
         <span class="accent">thoughtfully guided.</span>
       </h1>
       <p class="hero-lede">
-        Premium dental care abroad, coordinated simply. Refined comparison,
-        vetted providers, and high-touch travel support designed around you.
+        Premium dental care abroad, coordinated simply. Compare vetted
+        providers, clear pricing, and travel support in one guided plan.
       </p>
       <div class="hero-cta">
-        <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+        <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
         <a href="#how" class="btn btn--ghost">
           See How It Works
           <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -1283,7 +1343,7 @@ a{color:inherit;text-decoration:none}
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
       </div>
       <h4>Travel Coordination</h4>
-      <p>Flights, stays &amp; care—<br/>we handle the details.</p>
+      <p>Flights, stays, and care<br/>with support throughout.</p>
     </div>
     <div class="feat" role="listitem">
       <div class="ico" aria-hidden="true">
@@ -1314,8 +1374,9 @@ a{color:inherit;text-decoration:none}
         <em>Your options changed.</em>
       </h2>
       <p>
-        Dental services have outpaced overall inflation for decades—creating
-        a thoughtful case for exploring refined veneer care abroad.
+        U.S. dental costs have outpaced overall inflation for decades.
+        LATAM markets can lower clinical costs while Nira adds a focused
+        coordination layer for provider matching, planning, and travel support.
       </p>
       <a href="https://www.bls.gov/cpi/" target="_blank" rel="noopener" class="source-link">
         Source: U.S. Bureau of Labor Statistics (CPI)
@@ -1380,7 +1441,7 @@ a{color:inherit;text-decoration:none}
           <text x="540" y="302">2024</text>
         </g>
 
-        <!-- ===== Overall CPI line (sage) — ends ~6.2x ===== -->
+        <!-- ===== Overall CPI line (sage) - ends ~6.2x ===== -->
         <path d="M 70,278 L 89,277 L 108,275 L 128,273 L 147,271 L 166,269 L 185,267 L 204,264 L 224,262 L 243,260 L 262,257 L 281,254 L 300,252 L 319,250 L 339,246 L 358,242 L 377,239 L 396,236 L 415,232 L 435,228 L 454,224 L 473,220 L 492,216 L 511,209 L 530,198 L 540,188 L 540,278 L 70,278 Z"
               fill="url(#sageFill)"/>
         <path d="M 70,278 L 89,277 L 108,275 L 128,273 L 147,271 L 166,269 L 185,267 L 204,264 L 224,262 L 243,260 L 262,257 L 281,254 L 300,252 L 319,250 L 339,246 L 358,242 L 377,239 L 396,236 L 415,232 L 435,228 L 454,224 L 473,220 L 492,216 L 511,209 L 530,198 L 540,188"
@@ -1388,7 +1449,7 @@ a{color:inherit;text-decoration:none}
         <!-- end dot + side label for Overall CPI -->
         <circle cx="540" cy="188" r="3.5" fill="#8FA089"/>
 
-        <!-- ===== Dental Services line (copper) — ends ~12.1x ===== -->
+        <!-- ===== Dental Services line (copper) - ends ~12.1x ===== -->
         <path d="M 70,278 L 89,275 L 108,270 L 128,263 L 147,254 L 166,244 L 185,236 L 204,225 L 224,215 L 243,205 L 262,191 L 281,180 L 300,167 L 319,153 L 339,140 L 358,127 L 377,113 L 396,98 L 415,84 L 435,75 L 454,67 L 473,62 L 492,58 L 511,55 L 530,52 L 540,52 L 540,278 L 70,278 Z"
               fill="url(#copperFill)"/>
         <path d="M 70,278 L 89,275 L 108,270 L 128,263 L 147,254 L 166,244 L 185,236 L 204,225 L 224,215 L 243,205 L 262,191 L 281,180 L 300,167 L 319,153 L 339,140 L 358,127 L 377,113 L 396,98 L 415,84 L 435,75 L 454,67 L 473,62 L 492,58 L 511,55 L 530,52 L 540,52"
@@ -1468,7 +1529,7 @@ a{color:inherit;text-decoration:none}
       <div class="eyebrow">Treatments We Commonly Support</div>
       <h2>Comprehensive care.<br/>Remarkable transformation.</h2>
     </div>
-    <p>From single-tooth fixes to complete smile restorations, we help you explore your best options abroad.</p>
+    <p>From single-tooth fixes to complete smile restorations, we help you explore the right options abroad.</p>
   </div>
 
   <div class="treat-grid">
@@ -1594,7 +1655,7 @@ a{color:inherit;text-decoration:none}
       <div class="eyebrow">Premium Options Abroad</div>
       <h2>World-class care,<br/>more accessible.</h2>
       <p class="lead">We partner with vetted, experienced providers in trusted destinations known for high-quality dental care and warm hospitality.</p>
-      <a href="#destinations" class="dest-link">
+      <a href="/compare#destinations" class="dest-link">
         Explore Destinations
         <svg width="16" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
@@ -1691,8 +1752,8 @@ a{color:inherit;text-decoration:none}
               <rect y="76" width="92" height="16" fill="#7E6242"/>
             </svg>
           </div>
-          <div class="dest-label">More Destinations</div>
-          <p class="dest-desc">We'll help you explore other vetted countries and providers.</p>
+          <div class="dest-label">Colombia</div>
+          <p class="dest-desc">Max savings with strong specialist depth.</p>
         </article>
       </div>
 
@@ -1715,7 +1776,7 @@ a{color:inherit;text-decoration:none}
           <svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="24" rx="2"/><path d="M18 38h12M22 32v6M26 32v6"/><circle cx="24" cy="18" r="3.2"/><path d="M18 26a6 6 0 0 1 12 0"/></svg>
         </div>
         <h4>Virtual Consult<br/>Coordination</h4>
-        <p>We connect you with vetted providers and help you get started—virtually.</p>
+        <p>We connect you with vetted providers and help you get started virtually.</p>
       </div>
       <div class="inc-item">
         <div class="ico" aria-hidden="true">
@@ -1753,60 +1814,57 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<!-- ============================ TESTIMONIALS ============================ -->
+<!-- ============================ TRUST PROOF ============================ -->
 <section class="testimonials" id="stories">
   <div class="container testimonials-inner">
     <div class="test-left">
-      <div class="eyebrow">Real Patients. Real Results.</div>
-      <h2>Guided with care.<br/>Trusted every step.</h2>
-      <a href="#stories" class="dest-link">
-        Read More Stories
+      <div class="eyebrow">How We Vet</div>
+      <h2>Built for clarity.<br/>Designed around trust.</h2>
+      <a href="/quote" class="dest-link">
+        Start Quote Review
         <svg width="16" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
     </div>
 
     <div class="test-cards">
       <article class="test-card">
-        <div class="test-quote">"</div>
-        <p class="test-text">Nira made the whole process feel calm and considered. I love my new smile—and no one knew I had work done.</p>
+        <div class="test-quote">1</div>
+        <p class="test-text">We review provider credentials, clinic standards, treatment planning process, and international patient experience before making an introduction.</p>
         <div class="test-attribution">
           <div class="test-meta">
-            <div class="test-name">— Sarah R.</div>
-            <div class="test-loc">Chicago, IL</div>
+            <div class="test-name">Provider Screening</div>
+            <div class="test-loc">Credential and process review</div>
           </div>
           <div class="test-avatar" aria-hidden="true">
-            <img src="/Sarah.png" alt="Sarah R." />
-            <span>S</span>
+            <span>V</span>
           </div>
         </div>
       </article>
 
       <article class="test-card">
-        <div class="test-quote">"</div>
-        <p class="test-text">From the first consult to the final fitting, I felt completely cared for—warm, organized, and reassuring.</p>
+        <div class="test-quote">2</div>
+        <p class="test-text">Your U.S. quote is compared against destination ranges, travel timing, materials, and the scope of care so the total picture is clear.</p>
         <div class="test-attribution">
           <div class="test-meta">
-            <div class="test-name">— Maria L.</div>
-            <div class="test-loc">Dallas, TX</div>
+            <div class="test-name">Transparent Comparison</div>
+            <div class="test-loc">Clinical and travel context</div>
           </div>
           <div class="test-avatar" aria-hidden="true">
-            <img src="/Maria.png" alt="Maria L." />
-            <span>M</span>
+            <span>C</span>
           </div>
         </div>
       </article>
 
       <article class="test-card">
-        <div class="test-quote">"</div>
-        <p class="test-text">I got the refined results I wanted for less than half the cost, with thoughtful coordination start to finish.</p>
+        <div class="test-quote">3</div>
+        <p class="test-text">The goal is a smoother path from first quote review to provider introduction, travel planning, and aftercare expectations.</p>
         <div class="test-attribution">
           <div class="test-meta">
-            <div class="test-name">— Linda T.</div>
-            <div class="test-loc">Seattle, WA</div>
+            <div class="test-name">Guided Coordination</div>
+            <div class="test-loc">Before, during, and after travel</div>
           </div>
           <div class="test-avatar" aria-hidden="true">
-            <img src="/Linda.png" alt="Linda T." />
-            <span>L</span>
+            <span>N</span>
           </div>
         </div>
       </article>
@@ -1858,7 +1916,7 @@ a{color:inherit;text-decoration:none}
     <div class="calc-header">
       <div class="how-eyebrow"><span>Your Estimated Investment</span></div>
       <h2>See your refined savings, transparently.</h2>
-      <p>Adjust your treatment details below for an instant estimate—a personalized quote follows after we review your treatment plan.</p>
+      <p>Adjust your treatment details below for an instant estimate. A personalized quote follows after we review your treatment plan.</p>
     </div>
 
     <div class="calc-card">
@@ -1933,7 +1991,7 @@ a{color:inherit;text-decoration:none}
             <div class="bar-meta">
               <div class="bar-label-group">
                 <span class="bar-label">Colombia</span>
-                <span class="bar-tagline">Best value — top specialists</span>
+                <span class="bar-tagline">Max savings</span>
               </div>
               <span class="bar-range" data-out="colombia">$3,200 – $5,200</span>
             </div>
@@ -1944,7 +2002,7 @@ a{color:inherit;text-decoration:none}
             <div class="bar-meta">
               <div class="bar-label-group">
                 <span class="bar-label">Costa Rica</span>
-                <span class="bar-tagline">Premium clinics, paradise recovery</span>
+                <span class="bar-tagline">Mix of savings and short stay</span>
               </div>
               <span class="bar-range" data-out="costarica">$4,000 – $6,800</span>
             </div>
@@ -1955,7 +2013,7 @@ a{color:inherit;text-decoration:none}
             <div class="bar-meta">
               <div class="bar-label-group">
                 <span class="bar-label">Mexico</span>
-                <span class="bar-tagline">Closest to home, fastest trip</span>
+                <span class="bar-tagline">Shortest trip</span>
               </div>
               <span class="bar-range" data-out="mexico">$3,200 – $6,000</span>
             </div>
@@ -1978,7 +2036,7 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
 
-        <a href="/contact" class="btn btn--primary calc-cta">Get My Personalized Quote</a>
+        <a href="/quote" class="btn btn--primary calc-cta">Get My Personalized Quote</a>
         <p class="calc-disclaimer">Estimates only. Actual quotes vary by case complexity, materials selected, and individual provider. A Nira coordinator will share your final personalized comparison after reviewing your treatment plan.</p>
       </div>
     </div>
@@ -2015,7 +2073,7 @@ a{color:inherit;text-decoration:none}
           Who provides treatment?
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <div class="faq-body">All treatment is delivered by licensed local dental professionals in vetted, accredited clinics. Nira is a coordination service—we don't provide clinical care directly.</div>
+        <div class="faq-body">All treatment is delivered by licensed local dental professionals in vetted, accredited clinics. Nira is a coordination service and does not provide clinical care directly.</div>
       </details>
 
       <details class="faq-item">
@@ -2031,7 +2089,7 @@ a{color:inherit;text-decoration:none}
           What kind of dental work can I compare?
           <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <div class="faq-body">Major dental work—veneers, crowns, implants, full-mouth restorations, and full smile makeovers. We focus on planned, comprehensive cases rather than emergencies.</div>
+        <div class="faq-body">Major dental work includes veneers, crowns, implants, full-mouth restorations, and full smile makeovers. We focus on planned, comprehensive cases rather than emergencies.</div>
       </details>
 
       <details class="faq-item">
@@ -2050,10 +2108,10 @@ a{color:inherit;text-decoration:none}
   <div class="beach-content">
     <h3>Ready for a more beautiful smile?</h3>
     <div class="sub">Premium Dental Care Abroad, Coordinated Simply.</div>
-    <p>Get personalized comparisons, vetted provider options, and a thoughtful guide through every step—at no cost to you.</p>
+    <p>Get personalized comparisons, vetted provider options, and a thoughtful guide through every step at no cost to you.</p>
     <div class="beach-cta-actions">
-      <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
-      <a href="/calculator" class="btn btn--ghost">Book a Call</a>
+      <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
+      <a href="/calculator" class="btn btn--ghost">Estimate Savings</a>
     </div>
   </div>
 </section>
@@ -2074,7 +2132,7 @@ a{color:inherit;text-decoration:none}
           <span class="social-link" aria-label="YouTube unavailable">
             <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9l5 3-5 3z" fill="#fff"/></svg>
           </span>
-          <a href="/calculator" aria-label="Contact Nira Dental Abroad">
+          <a href="/quote" aria-label="Start Nira quote review">
             <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg>
           </a>
         </div>
@@ -2085,9 +2143,9 @@ a{color:inherit;text-decoration:none}
         <ul>
           <li><a href="#why">About Nira</a></li>
           <li><a href="/services">Services</a></li>
-          <li><a href="/compare#countries">Countries</a></li>
-          <li><a href="#stories">Patient Stories</a></li>
-          <li><a href="/calculator">Contact Us</a></li>
+          <li><a href="/compare#destinations">Destinations</a></li>
+          <li><a href="#stories">How We Vet</a></li>
+          <li><a href="/quote">Quote Review</a></li>
         </ul>
       </div>
 
@@ -2095,7 +2153,7 @@ a{color:inherit;text-decoration:none}
         <h5>Resources</h5>
         <ul>
           <li><a href="/services">Dental Treatments</a></li>
-          <li><a href="/compare#countries">Destinations</a></li>
+          <li><a href="/compare#destinations">Destinations</a></li>
           <li><a href="/insights/how-to-plan-dental-travel">Travel Guide</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="/insights">Insights</a></li>
@@ -2105,8 +2163,8 @@ a{color:inherit;text-decoration:none}
       <div class="foot-col">
         <h5>Support</h5>
         <ul>
-          <li><a href="/calculator">Book a Call</a></li>
-          <li><a href="/calculator">Compare Your Quote</a></li>
+          <li><a href="/quote">Start Quote Review</a></li>
+          <li><a href="/quote">Compare Your Quote</a></li>
           <li><span class="is-disabled">Patient Portal</span></li>
           <li><span class="is-disabled">Privacy Policy</span></li>
           <li><span class="is-disabled">Terms of Service</span></li>
@@ -2150,7 +2208,7 @@ a{color:inherit;text-decoration:none}
       qtyMin: 1, qtyMax: 6, qtyStep: 1, qtyDefault: 1,
       hasQuantity: true,
       duration: '5–7 days',
-      helper: 'A single crown is most common—multiple may be needed for adjacent damaged teeth.',
+      helper: 'A single crown is most common. Multiple crowns may be needed for adjacent damaged teeth.',
       materials: {
         premium:  { us:[1500,3800], colombia:[450,750], costarica:[550,950], mexico:[450,850] },
         standard: { us:[900,1800],  colombia:[280,480], costarica:[380,650], mexico:[320,580] }

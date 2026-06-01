@@ -31,13 +31,21 @@
     </a>
     <div class="nav-links">
       <a href="/services">Services</a>
-      <a href="/compare#countries" class="is-current">Countries</a>
+      <div class="nav-dropdown-wrap">
+        <a href="/compare#destinations" class="is-current">Destinations</a>
+        <div class="nav-dropdown" aria-label="Destination links">
+          <a href="/countries/mexico">Mexico</a>
+          <a href="/countries/costa-rica">Costa Rica</a>
+          <a href="/countries/colombia">Colombia</a>
+          <a href="/compare">Compare All Destinations</a>
+        </div>
+      </div>
       <a href="/calculator">Calculator</a>
       <a href="/compare">Compare</a>
       <a href="/insights">Insights</a>
       <a href="/#faq">FAQ</a>
     </div>
-    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <a href="/quote" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -54,13 +62,19 @@
   </div>
   <nav class="nav-mobile-links">
     <a href="/services">Services</a>
-    <a href="/compare#countries">Countries</a>
+    <details class="nav-mobile-group">
+      <summary>Destinations</summary>
+      <a href="/countries/mexico">Mexico</a>
+      <a href="/countries/costa-rica">Costa Rica</a>
+      <a href="/countries/colombia">Colombia</a>
+      <a href="/compare">Compare All Destinations</a>
+    </details>
     <a href="/calculator">Calculator</a>
     <a href="/compare">Compare</a>
     <a href="/insights">Insights</a>
     <a href="/#faq">FAQ</a>
   </nav>
-  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+  <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
 </div>
 <div class="nav-overlay" id="nav-overlay"></div>
 <section class="container hero">
@@ -69,7 +83,7 @@
     <div class="eyebrow">Country guide</div>
     <h1>Dental Care in Mexico</h1>
     <p class="lede">Premium clinics, quick travel from the U.S., and strong value for major restorative and cosmetic dental work.</p>
-    <div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/services" class="btn btn--ghost">Explore Services</a></div>
+    <div class="hero-actions"><a href="/quote" class="btn btn--primary">Compare Your Quote</a><a href="/services" class="btn btn--ghost">Explore Services</a></div>
   </div>
   <div class="hero-art" aria-hidden="true">
     <div class="stat"><strong>50-70%</strong><span>typical savings for major cases</span></div><div class="stat"><strong>5-10 days</strong><span>planning and treatment window</span></div><div class="stat"><strong>5</strong><span>major services compared</span></div>
@@ -77,7 +91,7 @@
 </section>
 <section class="band"><div class="container"><div class="section-head"><div><div class="eyebrow">Why Mexico</div><h2>When this destination makes sense.</h2></div><ul class="mini-list"><li>Strong access from major U.S. airports.</li><li>Large selection of experienced private clinics.</li><li>Good fit for patients who want lower travel friction.</li></ul></div><div class="table-wrap"><table><thead><tr><th>Treatment</th><th>Estimated Range</th><th>Typical Window</th></tr></thead><tbody><tr><td><strong>veneers</strong></td><td>$400 - $750 per tooth</td><td>5-10 days</td></tr><tr><td><strong>crowns</strong></td><td>$450 - $850 per tooth</td><td>5-10 days</td></tr><tr><td><strong>implants</strong></td><td>$1,400 - $2,100 per implant</td><td>5-10 days</td></tr><tr><td><strong>full-mouth restoration</strong></td><td>$12,500 - $21,000 per case</td><td>5-10 days</td></tr></tbody></table></div></div></section>
 <section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow">Services</div><h2>Common treatment categories.</h2></div><p>Veneers, crowns, implants, full-mouth restoration, and All-on-4 planning.</p></div><div class="grid grid--3"><article class="card"><h3>Veneers</h3><p>Compare natural-looking veneer options with vetted providers abroad and a guided travel plan.</p><div class="card-actions"><a href="/services/veneers" class="btn btn--ghost">View service</a></div></article><article class="card"><h3>Crowns</h3><p>Explore crown options for damaged, restored, or cosmetically improved teeth with transparent pricing by destination.</p><div class="card-actions"><a href="/services/crowns" class="btn btn--ghost">View service</a></div></article><article class="card"><h3>Implants</h3><p>Plan implant treatment abroad with a clear view of cost, timeline, travel needs, and follow-up considerations.</p><div class="card-actions"><a href="/services/implants" class="btn btn--ghost">View service</a></div></article><article class="card"><h3>Full-Mouth Restoration</h3><p>Compare comprehensive restorative treatment plans that combine crowns, implants, veneers, or full-arch solutions.</p><div class="card-actions"><a href="/services/full-mouth-restoration" class="btn btn--ghost">View service</a></div></article><article class="card"><h3>Smile Makeovers</h3><p>Coordinate multi-service smile transformations with transparent options for destination, timeline, and provider match.</p><div class="card-actions"><a href="/services/smile-makeovers" class="btn btn--ghost">View service</a></div></article></div></div></section>
-<section class="cta"><div class="container cta-inner"><div><h2>Compare Mexico with your U.S. quote</h2><p>Use the standalone calculator to review treatment type, material grade, market, and case complexity.</p></div><div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
+<section class="cta"><div class="container cta-inner"><div><h2>Compare Mexico with your U.S. quote</h2><p>Use the standalone calculator to review treatment type, material grade, market, and case complexity.</p></div><div class="hero-actions"><a href="/quote" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Destinations</a></div></div></section>
 <footer class="site-footer">
   <div class="container">
     <div class="foot-top">
@@ -89,13 +103,13 @@
         <ul><li><a href="/services/veneers">Veneers</a></li><li><a href="/services/crowns">Crowns</a></li><li><a href="/services/implants">Implants</a></li><li><a href="/services/full-mouth-restoration">Full-Mouth Restoration</a></li><li><a href="/services/smile-makeovers">Smile Makeovers</a></li></ul>
       </div>
       <div class="foot-col">
-        <h5>Countries</h5>
+        <h5>Destinations</h5>
         <ul><li><a href="/countries/mexico">Mexico</a></li><li><a href="/countries/costa-rica">Costa Rica</a></li><li><a href="/countries/colombia">Colombia</a></li></ul>
       </div>
       <div class="foot-col">
         <h5>Resources</h5>
         <ul>
-          <li><a href="/compare">Compare Countries</a></li>
+          <li><a href="/compare">Compare Destinations</a></li>
           <li><a href="/calculator">Calculator</a></li>
           <li><a href="/insights">Insights</a></li>
         </ul>
@@ -103,9 +117,9 @@
       <div class="foot-col">
         <h5>Support</h5>
         <ul>
-          <li><a href="/calculator">Compare Your Quote</a></li>
+          <li><a href="/quote">Compare Your Quote</a></li>
           <li><a href="/#faq">FAQ</a></li>
-          <li><a href="/#quote">Contact</a></li>
+          <li><a href="/quote">Quote Review</a></li>
         </ul>
       </div>
     </div>

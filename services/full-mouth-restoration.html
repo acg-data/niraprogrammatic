@@ -31,13 +31,21 @@
     </a>
     <div class="nav-links">
       <a href="/services" class="is-current">Services</a>
-      <a href="/compare#countries">Countries</a>
+      <div class="nav-dropdown-wrap">
+        <a href="/compare#destinations">Destinations</a>
+        <div class="nav-dropdown" aria-label="Destination links">
+          <a href="/countries/mexico">Mexico</a>
+          <a href="/countries/costa-rica">Costa Rica</a>
+          <a href="/countries/colombia">Colombia</a>
+          <a href="/compare">Compare All Destinations</a>
+        </div>
+      </div>
       <a href="/calculator">Calculator</a>
       <a href="/compare">Compare</a>
       <a href="/insights">Insights</a>
       <a href="/#faq">FAQ</a>
     </div>
-    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <a href="/quote" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -54,13 +62,19 @@
   </div>
   <nav class="nav-mobile-links">
     <a href="/services">Services</a>
-    <a href="/compare#countries">Countries</a>
+    <details class="nav-mobile-group">
+      <summary>Destinations</summary>
+      <a href="/countries/mexico">Mexico</a>
+      <a href="/countries/costa-rica">Costa Rica</a>
+      <a href="/countries/colombia">Colombia</a>
+      <a href="/compare">Compare All Destinations</a>
+    </details>
     <a href="/calculator">Calculator</a>
     <a href="/compare">Compare</a>
     <a href="/insights">Insights</a>
     <a href="/#faq">FAQ</a>
   </nav>
-  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+  <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
 </div>
 <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -71,7 +85,7 @@
     <h1>Full-Mouth Restoration Abroad</h1>
     <p class="lede">Compare comprehensive restorative treatment plans that combine crowns, implants, veneers, or full-arch solutions.</p>
     <div class="hero-actions">
-      <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+      <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
       <a href="/services" class="btn btn--ghost">Explore Services</a>
     </div>
   </div>
@@ -89,7 +103,7 @@
       <span class="sp-stat-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
       <div>
         <div class="sp-stat-big sp-stat-big--word">Usually</div>
-        <div class="sp-stat-sub">typical planning window 10–14 days</div>
+        <div class="sp-stat-sub">typical planning window 10-14 days</div>
         <div class="sp-stat-detail">From consultation to final review</div>
       </div>
     </div>
@@ -111,17 +125,17 @@
         <span class="sp-metric-ico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
         <div class="sp-metric-val">Fit</div>
         <div class="sp-metric-lbl">ideal patients</div>
-        <p class="sp-metric-desc">Best for patients with multiple failing teeth or a full restorative plan.</p>
+        <p class="sp-metric-desc">Good fit for patients with multiple failing teeth or a full restorative plan.</p>
       </div>
       <div class="sp-metric">
         <span class="sp-metric-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-        <div class="sp-metric-val sp-metric-val--copper">Usually 10–14 days</div>
+        <div class="sp-metric-val sp-metric-val--copper">Usually 10-14 days</div>
         <div class="sp-metric-detail">for major single-trip cases; implant staging may require follow-up.</div>
         <div class="sp-metric-lbl">Typical timeline</div>
       </div>
       <div class="sp-metric">
         <span class="sp-metric-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-        <div class="sp-metric-val">From $11,000 – $23,000 abroad</div>
+        <div class="sp-metric-val">From $11,000 - $23,000 abroad</div>
         <div class="sp-metric-lbl">Estimated price range</div>
         <p class="sp-metric-desc">Depends on destination and case complexity.</p>
       </div>
@@ -132,7 +146,7 @@
 <section class="section container">
   <div class="section-head">
     <div><div class="eyebrow">Overview</div><h2>What to know before comparing providers.</h2></div>
-    <p>Best for patients with multiple failing teeth, extensive wear, or a complete restorative treatment plan. From $11,000 - $23,000 abroad for many major cases, depending on destination and complexity.</p>
+    <p>Good fit for patients with multiple failing teeth, extensive wear, or a complete restorative treatment plan. From $11,000 - $23,000 abroad for many major cases, depending on destination and complexity.</p>
   </div>
   <div class="sp-dest-table">
     <div class="sp-dest-head">
@@ -143,18 +157,18 @@
     </div>
     <div class="sp-dest-row">
     <div class="sp-dest-cell sp-dest-country"><img class="sp-dest-img" src="/mexico.jpg" alt="Mexico" width="34" height="34" />Mexico</div>
-    <div class="sp-dest-cell">$12,500 – $21,000</div>
-    <div class="sp-dest-cell">10 – 14 days</div>
+    <div class="sp-dest-cell">$12,500 - $21,000</div>
+    <div class="sp-dest-cell">10 - 14 days</div>
     <div class="sp-dest-cell">High-quality care with excellent value</div>
   </div><div class="sp-dest-row">
     <div class="sp-dest-cell sp-dest-country"><img class="sp-dest-img" src="/costa-rica.jpg" alt="Costa Rica" width="34" height="34" />Costa Rica</div>
-    <div class="sp-dest-cell">$14,500 – $23,000</div>
-    <div class="sp-dest-cell">10 – 14 days</div>
+    <div class="sp-dest-cell">$14,500 - $23,000</div>
+    <div class="sp-dest-cell">10 - 14 days</div>
     <div class="sp-dest-cell">Top clinics with strong patient experience</div>
   </div><div class="sp-dest-row">
     <div class="sp-dest-cell sp-dest-country"><img class="sp-dest-img" src="/colombia.jpg" alt="Colombia" width="34" height="34" />Colombia</div>
-    <div class="sp-dest-cell">$11,000 – $19,000</div>
-    <div class="sp-dest-cell">10 – 14 days</div>
+    <div class="sp-dest-cell">$11,000 - $19,000</div>
+    <div class="sp-dest-cell">10 - 14 days</div>
     <div class="sp-dest-cell">Skilled dentists and modern technology</div>
   </div>
   </div>
@@ -164,7 +178,7 @@
   <div class="container">
     <div class="section-head">
       <div><div class="eyebrow">Common Solutions</div><h2>Fast answers.</h2></div>
-      <p>Most full-mouth cases combine implants, crowns, and sometimes veneers. A digital treatment plan before travel reduces chair time significantly.</p>
+      <p>Most full-mouth cases combine implants, crowns, and sometimes veneers. A digital treatment plan before travel can reduce chair time significantly.</p>
     </div>
     <div class="sp-rel-grid"><article class="sp-rel-card">
     <span class="sp-rel-ico"><svg viewBox="0 0 24 24"><path d="M12 3c-2.8 0-5 2-5 5 0 2.8.5 5 .5 8.5 0 1.2.6 2 1.5 2 .8 0 1.5-.9 1.5-2 0-.9.8-1.5 1.5-1.5s1.5.6 1.5 1.5c0 1.1.7 2 1.5 2 .9 0 1.5-.8 1.5-2 0-3.5.5-5.7.5-8.5 0-3-2.2-5-5.5-5z"/></svg></span>
@@ -184,7 +198,7 @@
   </article></div>
   </div>
 </section>
-<section class="cta"><div class="container cta-inner"><div><h2>Compare full-mouth restoration options</h2><p>Use the interactive calculator to estimate U.S. and destination pricing before a personalized review.</p></div><div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
+<section class="cta"><div class="container cta-inner"><div><h2>Compare full-mouth restoration options</h2><p>Use the interactive calculator to estimate U.S. and destination pricing before a personalized review.</p></div><div class="hero-actions"><a href="/quote" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Destinations</a></div></div></section>
 <footer class="site-footer">
   <div class="container">
     <div class="foot-top">
@@ -196,13 +210,13 @@
         <ul><li><a href="/services/veneers">Veneers</a></li><li><a href="/services/crowns">Crowns</a></li><li><a href="/services/implants">Implants</a></li><li><a href="/services/full-mouth-restoration">Full-Mouth Restoration</a></li><li><a href="/services/smile-makeovers">Smile Makeovers</a></li></ul>
       </div>
       <div class="foot-col">
-        <h5>Countries</h5>
+        <h5>Destinations</h5>
         <ul><li><a href="/countries/mexico">Mexico</a></li><li><a href="/countries/costa-rica">Costa Rica</a></li><li><a href="/countries/colombia">Colombia</a></li></ul>
       </div>
       <div class="foot-col">
         <h5>Resources</h5>
         <ul>
-          <li><a href="/compare">Compare Countries</a></li>
+          <li><a href="/compare">Compare Destinations</a></li>
           <li><a href="/calculator">Calculator</a></li>
           <li><a href="/insights">Insights</a></li>
         </ul>
@@ -210,9 +224,9 @@
       <div class="foot-col">
         <h5>Support</h5>
         <ul>
-          <li><a href="/calculator">Compare Your Quote</a></li>
+          <li><a href="/quote">Compare Your Quote</a></li>
           <li><a href="/#faq">FAQ</a></li>
-          <li><a href="/#quote">Contact</a></li>
+          <li><a href="/quote">Quote Review</a></li>
         </ul>
       </div>
     </div>

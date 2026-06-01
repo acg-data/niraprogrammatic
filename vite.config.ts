@@ -31,7 +31,7 @@ export default defineConfig({
         costaRica: pageInput("countries/costa-rica.html"),
         colombia: pageInput("countries/colombia.html"),
         calculator: pageInput("calculator.html"),
-        contact: pageInput("contact.html"),
+        quote: pageInput("quote.html"),
         insights: pageInput("insights.html"),
         dentalCareAbroadCosts: pageInput("insights/dental-care-abroad-costs.html"),
         isDentalCareAbroadSafe: pageInput("insights/is-dental-care-abroad-safe.html"),

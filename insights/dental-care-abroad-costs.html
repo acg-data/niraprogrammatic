@@ -31,13 +31,21 @@
     </a>
     <div class="nav-links">
       <a href="/services">Services</a>
-      <a href="/compare#countries">Countries</a>
+      <div class="nav-dropdown-wrap">
+        <a href="/compare#destinations">Destinations</a>
+        <div class="nav-dropdown" aria-label="Destination links">
+          <a href="/countries/mexico">Mexico</a>
+          <a href="/countries/costa-rica">Costa Rica</a>
+          <a href="/countries/colombia">Colombia</a>
+          <a href="/compare">Compare All Destinations</a>
+        </div>
+      </div>
       <a href="/calculator">Calculator</a>
       <a href="/compare">Compare</a>
       <a href="/insights" class="is-current">Insights</a>
       <a href="/#faq">FAQ</a>
     </div>
-    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <a href="/quote" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -54,13 +62,19 @@
   </div>
   <nav class="nav-mobile-links">
     <a href="/services">Services</a>
-    <a href="/compare#countries">Countries</a>
+    <details class="nav-mobile-group">
+      <summary>Destinations</summary>
+      <a href="/countries/mexico">Mexico</a>
+      <a href="/countries/costa-rica">Costa Rica</a>
+      <a href="/countries/colombia">Colombia</a>
+      <a href="/compare">Compare All Destinations</a>
+    </details>
     <a href="/calculator">Calculator</a>
     <a href="/compare">Compare</a>
     <a href="/insights">Insights</a>
     <a href="/#faq">FAQ</a>
   </nav>
-  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+  <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
 </div>
 <div class="nav-overlay" id="nav-overlay"></div>
 <section class="container hero">
@@ -75,7 +89,7 @@
     <div class="stat"><strong>Guide</strong><span>practical overview</span></div><div class="stat"><strong>5 min</strong><span>estimated read</span></div><div class="stat"><strong>Nira</strong><span>planning perspective</span></div>
   </div>
 </section>
-<section class="band"><div class="container"><article class="body-copy"><p>Dental care abroad is not one fixed price. The final range depends on the treatment type, materials, provider experience, destination, case complexity, and travel plan.</p><p>The largest savings usually appear in comprehensive cases such as implants, full-mouth restoration, and multi-tooth cosmetic work. Small single-tooth cases may still save money, but travel costs matter more.</p><p>A strong comparison should include the clinical quote, travel costs, number of days away, follow-up plan, and whether the provider has experience with international patients.</p><h2>What to do next</h2><ul><li>Collect your current quote, treatment plan, or photos.</li><li>Compare destination fit before focusing only on price.</li><li>Use the calculator to estimate ranges before requesting a personalized review.</li></ul><div class="card-actions"><a href="/calculator" class="btn btn--primary">Open Calculator</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></article></div></section>
+<section class="band"><div class="container"><article class="body-copy"><p>Dental care abroad is not one fixed price. The final range depends on the treatment type, materials, provider experience, destination, case complexity, and travel plan.</p><p>The largest savings usually appear in comprehensive cases such as implants, full-mouth restoration, and multi-tooth cosmetic work. Small single-tooth cases may still save money, but travel costs matter more.</p><p>A strong comparison should include the clinical quote, travel costs, number of days away, follow-up plan, and whether the provider has experience with international patients.</p><h2>What to do next</h2><ul><li>Collect your current quote, treatment plan, or photos.</li><li>Compare destination fit before focusing only on price.</li><li>Use the quote form to request a personalized review.</li></ul><div class="card-actions"><a href="/quote" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Destinations</a></div></article></div></section>
 <section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow">More insights</div><h2>Keep planning.</h2></div><p>Use these starter articles to understand the decision before choosing a provider or destination.</p></div><div class="grid grid--2"><article class="card"><div class="kicker">Safety</div><h3>Is Dental Care Abroad Safe?</h3><p>What patients should check before choosing a destination clinic, provider, or dental travel coordinator.</p><div class="card-actions"><a href="/insights/is-dental-care-abroad-safe" class="btn btn--ghost">Read next</a></div></article><article class="card"><div class="kicker">Planning</div><h3>How to Plan a Dental Travel Trip</h3><p>A step-by-step look at quote review, virtual consults, travel timing, recovery, and aftercare.</p><div class="card-actions"><a href="/insights/how-to-plan-dental-travel" class="btn btn--ghost">Read next</a></div></article></div></div></section>
 <footer class="site-footer">
   <div class="container">
@@ -88,13 +102,13 @@
         <ul><li><a href="/services/veneers">Veneers</a></li><li><a href="/services/crowns">Crowns</a></li><li><a href="/services/implants">Implants</a></li><li><a href="/services/full-mouth-restoration">Full-Mouth Restoration</a></li><li><a href="/services/smile-makeovers">Smile Makeovers</a></li></ul>
       </div>
       <div class="foot-col">
-        <h5>Countries</h5>
+        <h5>Destinations</h5>
         <ul><li><a href="/countries/mexico">Mexico</a></li><li><a href="/countries/costa-rica">Costa Rica</a></li><li><a href="/countries/colombia">Colombia</a></li></ul>
       </div>
       <div class="foot-col">
         <h5>Resources</h5>
         <ul>
-          <li><a href="/compare">Compare Countries</a></li>
+          <li><a href="/compare">Compare Destinations</a></li>
           <li><a href="/calculator">Calculator</a></li>
           <li><a href="/insights">Insights</a></li>
         </ul>
@@ -102,9 +116,9 @@
       <div class="foot-col">
         <h5>Support</h5>
         <ul>
-          <li><a href="/calculator">Compare Your Quote</a></li>
+          <li><a href="/quote">Compare Your Quote</a></li>
           <li><a href="/#faq">FAQ</a></li>
-          <li><a href="/#quote">Contact</a></li>
+          <li><a href="/quote">Quote Review</a></li>
         </ul>
       </div>
     </div>

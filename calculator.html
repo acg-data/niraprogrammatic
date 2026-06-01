@@ -31,13 +31,21 @@
     </a>
     <div class="nav-links">
       <a href="/services">Services</a>
-      <a href="/compare#countries">Countries</a>
+      <div class="nav-dropdown-wrap">
+        <a href="/compare#destinations">Destinations</a>
+        <div class="nav-dropdown" aria-label="Destination links">
+          <a href="/countries/mexico">Mexico</a>
+          <a href="/countries/costa-rica">Costa Rica</a>
+          <a href="/countries/colombia">Colombia</a>
+          <a href="/compare">Compare All Destinations</a>
+        </div>
+      </div>
       <a href="/calculator" class="is-current">Calculator</a>
       <a href="/compare">Compare</a>
       <a href="/insights">Insights</a>
       <a href="/#faq">FAQ</a>
     </div>
-    <a href="/contact" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
+    <a href="/quote" class="btn btn--primary nav-cta-btn">Compare Your Quote</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -54,13 +62,19 @@
   </div>
   <nav class="nav-mobile-links">
     <a href="/services">Services</a>
-    <a href="/compare#countries">Countries</a>
+    <details class="nav-mobile-group">
+      <summary>Destinations</summary>
+      <a href="/countries/mexico">Mexico</a>
+      <a href="/countries/costa-rica">Costa Rica</a>
+      <a href="/countries/colombia">Colombia</a>
+      <a href="/compare">Compare All Destinations</a>
+    </details>
     <a href="/calculator">Calculator</a>
     <a href="/compare">Compare</a>
     <a href="/insights">Insights</a>
     <a href="/#faq">FAQ</a>
   </nav>
-  <a href="/contact" class="btn btn--primary">Compare Your Quote</a>
+  <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
 </div>
 <div class="nav-overlay" id="nav-overlay"></div>
 
@@ -98,7 +112,7 @@
         <div>
           <div class="ch-feat-num">4</div>
           <div class="ch-feat-label">markets compared</div>
-          <div class="ch-feat-desc">U.S., Mexico, Costa Rica, Colombia &amp; more.</div>
+          <div class="ch-feat-desc">U.S., Mexico, Costa Rica, Colombia.</div>
         </div>
       </div>
       <hr class="ch-divider"/>
@@ -107,7 +121,7 @@
         <div>
           <div class="ch-feat-num">5</div>
           <div class="ch-feat-label">treatment types</div>
-          <div class="ch-feat-desc">Crowns, Implants, Veneers, All-on-4 &amp; more.</div>
+          <div class="ch-feat-desc">Crowns, Implants, Veneers, All-on-4.</div>
         </div>
       </div>
       <hr class="ch-divider"/>
@@ -168,9 +182,9 @@
   </div>
   <div class="calc-results">
     <div class="calc-result-row"><strong>United States</strong><span data-out="us">$12,000 - $22,400</span></div>
-    <div class="calc-result-row"><strong>Colombia</strong><span data-out="colombia">$3,200 - $5,200</span></div>
-    <div class="calc-result-row"><strong>Costa Rica</strong><span data-out="costarica">$4,000 - $6,800</span></div>
-    <div class="calc-result-row"><strong>Mexico</strong><span data-out="mexico">$3,200 - $6,000</span></div>
+    <div class="calc-result-row"><strong>Colombia <small>max savings</small></strong><span data-out="colombia">$3,200 - $5,200</span></div>
+    <div class="calc-result-row"><strong>Costa Rica <small>mix of both</small></strong><span data-out="costarica">$4,000 - $6,800</span></div>
+    <div class="calc-result-row"><strong>Mexico <small>shortest trip</small></strong><span data-out="mexico">$3,200 - $6,000</span></div>
     <div class="calc-summary">
       <div><div class="summary-label">Estimated Savings</div><div class="summary-value" data-out="savings">$6,800 - $19,200</div></div>
       <div><div class="summary-label">Trip Duration</div><div class="summary-value" data-out="duration">5-7 days</div></div>
@@ -180,7 +194,7 @@
   </div>
 </div></div></section>
 <section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow">How to use it</div><h2>Estimate first, then personalize.</h2></div><p>This calculator is a planning tool. Final pricing depends on diagnostics, provider recommendation, materials, case complexity, and travel timing. A personalized review should use your quote, X-rays, treatment plan, or photos.</p></div><div class="grid grid--3"><article class="card"><h3>1. Choose treatment</h3><p>Select the service that best matches your current quote or likely treatment plan.</p></article><article class="card"><h3>2. Tune the case</h3><p>Adjust material grade, market, quantity, and complexity so the estimate reflects your likely scenario.</p></article><article class="card"><h3>3. Compare destinations</h3><p>Review the U.S., Colombia, Costa Rica, and Mexico ranges before requesting a deeper comparison.</p></article></div></div></section>
-<section class="cta"><div class="container cta-inner"><div><h2>Ready for a personalized comparison?</h2><p>Send your quote or treatment plan so Nira can coordinate a more precise provider review.</p></div><div class="hero-actions"><a href="/contact" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Countries</a></div></div></section>
+<section class="cta"><div class="container cta-inner"><div><h2>Ready for a personalized comparison?</h2><p>Send your quote or treatment plan so Nira can coordinate a more precise provider review.</p></div><div class="hero-actions"><a href="/quote" class="btn btn--primary">Compare Your Quote</a><a href="/compare" class="btn btn--ghost">Compare Destinations</a></div></div></section>
 <footer class="site-footer">
   <div class="container">
     <div class="foot-top">
@@ -192,13 +206,13 @@
         <ul><li><a href="/services/veneers">Veneers</a></li><li><a href="/services/crowns">Crowns</a></li><li><a href="/services/implants">Implants</a></li><li><a href="/services/full-mouth-restoration">Full-Mouth Restoration</a></li><li><a href="/services/smile-makeovers">Smile Makeovers</a></li></ul>
       </div>
       <div class="foot-col">
-        <h5>Countries</h5>
+        <h5>Destinations</h5>
         <ul><li><a href="/countries/mexico">Mexico</a></li><li><a href="/countries/costa-rica">Costa Rica</a></li><li><a href="/countries/colombia">Colombia</a></li></ul>
       </div>
       <div class="foot-col">
         <h5>Resources</h5>
         <ul>
-          <li><a href="/compare">Compare Countries</a></li>
+          <li><a href="/compare">Compare Destinations</a></li>
           <li><a href="/calculator">Calculator</a></li>
           <li><a href="/insights">Insights</a></li>
         </ul>
@@ -206,9 +220,9 @@
       <div class="foot-col">
         <h5>Support</h5>
         <ul>
-          <li><a href="/calculator">Compare Your Quote</a></li>
+          <li><a href="/quote">Compare Your Quote</a></li>
           <li><a href="/#faq">FAQ</a></li>
-          <li><a href="/#quote">Contact</a></li>
+          <li><a href="/quote">Quote Review</a></li>
         </ul>
       </div>
     </div>
