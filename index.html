@@ -640,6 +640,48 @@ a{color:inherit;text-decoration:none}
   line-height: 1.55;
 }
 
+/* ============ How We Vet ============ */
+.how-we-vet{
+  background: var(--sage-deep);
+  padding: 72px 0 80px;
+  text-align: center;
+}
+.how-we-vet .eyebrow{color:rgba(255,255,255,.6)}
+.how-we-vet .eyebrow::after{background:rgba(255,255,255,.3)}
+.hwv-header{margin-bottom:48px}
+.hwv-header h2{
+  font-family:var(--f-serif);font-weight:500;
+  font-size:clamp(28px,2.8vw,38px);
+  line-height:1.12;color:#fff;
+  margin-top:20px;
+  letter-spacing:-.005em;
+}
+.hwv-steps{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:32px;max-width:860px;margin:0 auto 44px;
+}
+.hwv-step{
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+}
+.hwv-num{
+  width:52px;height:52px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.35);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-serif);font-size:22px;color:#fff;
+  margin-bottom:6px;
+}
+.hwv-step h3{
+  font-family:var(--f-serif);font-size:17px;font-weight:500;color:#fff;
+}
+.hwv-step p{
+  font-size:13.5px;line-height:1.65;
+  color:rgba(255,255,255,.7);max-width:240px;
+}
+.hwv-cta{margin-top:8px}
+@media(max-width:700px){
+  .hwv-steps{grid-template-columns:1fr;gap:28px}
+}
+
 /* ============ Testimonials ============ */
 .testimonials{
   background: var(--cream-2);
@@ -666,7 +708,10 @@ a{color:inherit;text-decoration:none}
   border: 1px solid var(--line);
   border-radius: var(--r-sm);
   padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
 }
+.test-card .test-text{ flex: 1 }
 .test-quote{
   font-family: var(--f-serif); font-style: italic;
   font-size: 48px; line-height: .5;
@@ -680,8 +725,10 @@ a{color:inherit;text-decoration:none}
 }
 .test-attribution{
   display: flex; align-items: center; gap: 14px;
+  flex-wrap: nowrap;
 }
-.test-meta{flex: 1}
+.test-meta{flex: 1; min-width: 0}
+.test-name, .test-loc{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
 .test-name{
   font-family: var(--f-sans);
   font-size: 13px; font-weight: 600;
@@ -1298,12 +1345,11 @@ a{color:inherit;text-decoration:none}
     <div class="hero-copy">
       <div class="hero-eyebrow" aria-hidden="true"></div>
       <h1>
-        A more beautiful smile,
-        <span class="accent">thoughtfully guided.</span>
+        A smile worth
+        <span class="accent">the journey.</span>
       </h1>
       <p class="hero-lede">
-        Premium dental care abroad, coordinated simply. Compare vetted
-        providers, clear pricing, and travel support in one guided plan.
+        We connect you with trusted dental clinics abroad, clear pricing, vetted providers, and support from start to finish.
       </p>
       <div class="hero-cta">
         <a href="/quote" class="btn btn--primary">Compare Your Quote</a>
@@ -1815,56 +1861,90 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- ============================ TRUST PROOF ============================ -->
+<!-- ============================ HOW WE VET ============================ -->
+<section class="how-we-vet" id="how-we-vet">
+  <div class="container">
+    <div class="hwv-header">
+      <div class="eyebrow">How We Vet</div>
+      <h2>Built for clarity.<br/>Designed around trust.</h2>
+    </div>
+    <div class="hwv-steps">
+      <div class="hwv-step">
+        <div class="hwv-num">1</div>
+        <h3>Provider Screening</h3>
+        <p>We review provider credentials, clinic standards, treatment planning process, and international patient experience before making an introduction.</p>
+      </div>
+      <div class="hwv-step">
+        <div class="hwv-num">2</div>
+        <h3>Transparent Comparison</h3>
+        <p>Your U.S. quote is compared against destination ranges, travel timing, materials, and the scope of care so the total picture is clear.</p>
+      </div>
+      <div class="hwv-step">
+        <div class="hwv-num">3</div>
+        <h3>Guided Coordination</h3>
+        <p>The goal is a smoother path from first quote review to provider introduction, travel planning, and aftercare expectations.</p>
+      </div>
+    </div>
+    <div class="hwv-cta">
+      <a href="/quote" class="btn btn--primary">Start Quote Review</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTIMONIALS ============================ -->
 <section class="testimonials" id="stories">
   <div class="container testimonials-inner">
     <div class="test-left">
-      <div class="eyebrow">How We Vet</div>
-      <h2>Built for clarity.<br/>Designed around trust.</h2>
-      <a href="/quote" class="dest-link">
-        Start Quote Review
+      <div class="eyebrow">Real Patients. Real Results.</div>
+      <h2>Guided with care.<br/>Trusted every step.</h2>
+      <a href="#stories" class="dest-link">
+        Read More Stories
         <svg width="16" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
     </div>
 
     <div class="test-cards">
       <article class="test-card">
-        <div class="test-quote">1</div>
-        <p class="test-text">We review provider credentials, clinic standards, treatment planning process, and international patient experience before making an introduction.</p>
+        <div class="test-quote">"</div>
+        <p class="test-text">Nira made the whole process feel calm and considered. I love my new smile and no one knew I had work done.</p>
         <div class="test-attribution">
-          <div class="test-meta">
-            <div class="test-name">Provider Screening</div>
-            <div class="test-loc">Credential and process review</div>
-          </div>
           <div class="test-avatar" aria-hidden="true">
-            <span>V</span>
+            <img src="/Sarah.png" alt="" onerror="this.remove()"/>
+            <span>S</span>
+          </div>
+          <div class="test-meta">
+            <div class="test-name">Sarah R.</div>
+            <div class="test-loc">Chicago, IL</div>
           </div>
         </div>
       </article>
 
       <article class="test-card">
-        <div class="test-quote">2</div>
-        <p class="test-text">Your U.S. quote is compared against destination ranges, travel timing, materials, and the scope of care so the total picture is clear.</p>
+        <div class="test-quote">"</div>
+        <p class="test-text">From the first consult to the final fitting, I felt completely cared for. Warm, organized, and reassuring the whole way.</p>
         <div class="test-attribution">
-          <div class="test-meta">
-            <div class="test-name">Transparent Comparison</div>
-            <div class="test-loc">Clinical and travel context</div>
-          </div>
           <div class="test-avatar" aria-hidden="true">
-            <span>C</span>
+            <img src="/Maria.png" alt="" onerror="this.remove()"/>
+            <span>M</span>
+          </div>
+          <div class="test-meta">
+            <div class="test-name">Maria L.</div>
+            <div class="test-loc">Dallas, TX</div>
           </div>
         </div>
       </article>
 
       <article class="test-card">
-        <div class="test-quote">3</div>
-        <p class="test-text">The goal is a smoother path from first quote review to provider introduction, travel planning, and aftercare expectations.</p>
+        <div class="test-quote">"</div>
+        <p class="test-text">I saved more than I expected and got results I'm genuinely proud of. Everything was handled properly from start to finish.</p>
         <div class="test-attribution">
-          <div class="test-meta">
-            <div class="test-name">Guided Coordination</div>
-            <div class="test-loc">Before, during, and after travel</div>
-          </div>
           <div class="test-avatar" aria-hidden="true">
-            <span>N</span>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=80" alt="" onerror="this.remove()"/>
+            <span>J</span>
+          </div>
+          <div class="test-meta">
+            <div class="test-name">James K.</div>
+            <div class="test-loc">Austin, TX</div>
           </div>
         </div>
       </article>

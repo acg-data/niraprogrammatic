@@ -436,6 +436,49 @@ td { color: var(--charcoal-2); font-size: 14px; }
 .contact-hero h1 { font-size: 52px; line-height: 1.06; }
 .contact-form-section { padding: 0 0 80px; }
 
+/* ============ Quote Form ============ */
+.qform-wrap {
+  max-width: 680px; margin: 0 auto;
+  background: var(--cream-card); border: 1px solid var(--line);
+  border-radius: 14px; padding: 44px 48px;
+}
+.qform-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.qform-field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 22px; }
+.qform-field:last-of-type { margin-bottom: 0; }
+.qform-label {
+  font-size: 12.5px; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--charcoal-2);
+}
+.qform-label sup { color: var(--terracotta); margin-left: 2px; }
+.qform-input, .qform-select, .qform-textarea {
+  font-family: var(--f-sans); font-size: 14.5px; color: var(--charcoal);
+  background: var(--cream); border: 1px solid var(--line-strong);
+  border-radius: 8px; padding: 11px 14px;
+  transition: border-color .2s, box-shadow .2s;
+  outline: none; width: 100%;
+}
+.qform-input:focus, .qform-select:focus, .qform-textarea:focus {
+  border-color: var(--sage); box-shadow: 0 0 0 3px rgba(143,160,137,.18);
+}
+.qform-input::placeholder, .qform-textarea::placeholder { color: var(--muted); }
+.qform-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%238f8e8e' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 18px; padding-right: 38px; cursor: pointer; }
+.qform-textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
+.qform-divider { height: 1px; background: var(--line); margin: 28px 0; }
+.qform-submit { width: 100%; padding: 14px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; }
+.qform-submit:disabled { opacity: .6; cursor: not-allowed; }
+.qform-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 14px; line-height: 1.6; }
+.qform-success {
+  display: none; text-align: center; padding: 48px 24px;
+  font-family: var(--f-serif); font-size: 20px; color: var(--charcoal);
+  line-height: 1.5;
+}
+.qform-success svg { stroke: var(--sage); margin-bottom: 16px; }
+.qform-error { font-size: 13px; color: #c0392b; margin-top: 10px; text-align: center; min-height: 20px; }
+@media (max-width: 600px) {
+  .qform-wrap { padding: 28px 22px; }
+  .qform-row { grid-template-columns: 1fr; gap: 0; }
+}
+
 /* ======== Compare page ======== */
 .compare-split {
   align-items: center;
@@ -974,4 +1017,62 @@ td { color: var(--charcoal-2); font-size: 14px; }
   .calc-result-row { grid-template-columns: 1fr; }
   .calc-result-row span { text-align: left; }
   .foot-copy { justify-content: flex-start; text-align: left; }
+}
+
+/* ============ Why Gap Chart ============ */
+.why-gap { background: var(--cream-2); padding: 72px 0 80px; }
+.wg-header { text-align: center; margin-bottom: 48px; }
+.wg-header h2 {
+  font-family: var(--f-serif); font-weight: 500;
+  font-size: clamp(26px, 2.6vw, 36px);
+  color: var(--charcoal); margin: 16px 0 12px;
+  letter-spacing: -.01em; line-height: 1.15;
+}
+.wg-sub { font-size: 15px; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+.wg-legend { display: flex; gap: 24px; justify-content: center; margin-bottom: 36px; }
+.wg-legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--charcoal-2); }
+.wg-legend-dot { width: 16px; height: 16px; border-radius: 4px; flex-shrink: 0; }
+.wg-legend-dot--us    { background: linear-gradient(90deg, var(--terracotta), #C9906E); }
+.wg-legend-dot--latam { background: linear-gradient(90deg, var(--sage-deep), var(--sage)); }
+.wg-chart { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+.wg-row {
+  background: var(--cream-card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 18px 22px;
+  display: grid; grid-template-columns: 200px 1fr 90px;
+  align-items: center; gap: 24px;
+}
+.wg-factor { display: block; font-size: 14px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+.wg-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.wg-bars { display: flex; flex-direction: column; gap: 8px; }
+.wg-bar-row { display: flex; align-items: center; gap: 10px; }
+.wg-bar-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; width: 42px; flex-shrink: 0;
+}
+.wg-bar-label--us    { color: var(--terracotta); }
+.wg-bar-label--latam { color: var(--sage-deep); }
+.wg-bar {
+  height: 22px; border-radius: 4px;
+  width: 0; flex-shrink: 0;
+  transition: width 1s cubic-bezier(.4,0,.2,1);
+}
+.wg-bar-row { flex: 1; display: flex; align-items: center; gap: 10px; }
+.wg-bar.is-visible { width: var(--target); }
+.wg-bar--us   { background: linear-gradient(90deg, var(--terracotta), #C9906E); }
+.wg-bar--latam{ background: linear-gradient(90deg, var(--sage-deep), var(--sage)); }
+.wg-save {
+  background: var(--sage-deep); color: #fff;
+  font-size: 12px; font-weight: 600;
+  padding: 5px 10px; border-radius: 20px;
+  text-align: center; white-space: nowrap;
+}
+.wg-foot {
+  max-width: 820px; margin: 40px auto 0; text-align: center;
+  font-family: var(--f-serif); font-style: italic;
+  font-size: 18px; color: var(--charcoal-2); line-height: 1.5;
+  border-top: 1px solid var(--line); padding-top: 32px;
+}
+@media (max-width: 720px) {
+  .wg-row { grid-template-columns: 1fr; gap: 12px; padding: 16px 18px; }
+  .wg-save { justify-self: start; }
 }

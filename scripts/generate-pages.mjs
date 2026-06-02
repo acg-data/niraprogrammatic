@@ -386,7 +386,7 @@ function comparePage() {
       icon: `<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
     },
     "costa-rica": {
-      cities: "San José, Alajuela, Liberia",
+      cities: "San José",
       img: "/costa-rica.jpg",
       bestLabel: "Premium care",
       bestDesc: "High-quality clinics<br>Relaxing recovery",
@@ -408,7 +408,7 @@ function comparePage() {
 
   const usRow = `<div class="ctable-row ctable-row--us">
   <div class="ctable-dest">
-    <span class="ci ci--us">US</span>
+    <img class="ci" src="/us.jpg" alt="United States" width="78" height="78" />
     <div>
       <h3>United States</h3>
       <span class="ctable-cities">${pinIco}Local and major metro markets</span>
@@ -502,6 +502,61 @@ function comparePage() {
     </div>
   </div>
 </section>
+
+<section class="why-gap" id="why-it-costs">
+  <div class="container">
+    <div class="wg-header">
+      <div class="eyebrow">The Price Gap</div>
+      <h2>Why the same treatment costs 3–5× more in the U.S.</h2>
+      <p class="wg-sub">Top LATAM clinics use the same materials and training standards. The gap is almost entirely overhead.</p>
+    </div>
+    <div class="wg-legend">
+      <div class="wg-legend-item"><span class="wg-legend-dot wg-legend-dot--us"></span>United States</div>
+      <div class="wg-legend-item"><span class="wg-legend-dot wg-legend-dot--latam"></span>LATAM Average</div>
+    </div>
+    <div class="wg-chart" id="wg-chart">
+      ${[
+        { factor: "Malpractice Insurance",    note: "U.S. premiums are among the world's highest",           us: "92%", latam: "10%", save: "~9× lower",  d: 0    },
+        { factor: "Practitioner Wages",       note: "U.S. dentists carry significant education debt",        us: "86%", latam: "22%", save: "~4× lower",  d: .15  },
+        { factor: "Clinic Rent &amp; Overhead", note: "Commercial real estate and equipment costs",          us: "76%", latam: "26%", save: "~3× lower",  d: .3   },
+        { factor: "Lab &amp; Materials",      note: "Same international-grade materials, lower lab fees",    us: "64%", latam: "36%", save: "~2× lower",  d: .45  },
+        { factor: "Admin &amp; Insurance Billing", note: "Complex U.S. insurance adds significant staff cost", us: "72%", latam: "8%", save: "~8× lower", d: .6   },
+      ].map(r => `<div class="wg-row">
+        <div class="wg-label">
+          <span class="wg-factor">${r.factor}</span>
+          <span class="wg-note">${r.note}</span>
+        </div>
+        <div class="wg-bars">
+          <div class="wg-bar-row">
+            <span class="wg-bar-label wg-bar-label--us">U.S.</span>
+            <div class="wg-bar wg-bar--us"    style="--target:${r.us};transition-delay:${r.d}s"></div>
+          </div>
+          <div class="wg-bar-row">
+            <span class="wg-bar-label wg-bar-label--latam">LATAM</span>
+            <div class="wg-bar wg-bar--latam" style="--target:${r.latam};transition-delay:${r.d + .1}s"></div>
+          </div>
+        </div>
+        <div class="wg-save">${r.save}</div>
+      </div>`).join("")}
+    </div>
+    <p class="wg-foot">The clinical outcome? Comparable. The overhead? Not even close.</p>
+  </div>
+</section>
+<script>
+(function(){
+  var chart = document.getElementById('wg-chart');
+  if(!chart) return;
+  var fired = false;
+  var io = new IntersectionObserver(function(entries){
+    if(fired || !entries[0].isIntersecting) return;
+    fired = true;
+    chart.querySelectorAll('.wg-bar').forEach(function(b){ b.classList.add('is-visible'); });
+    io.disconnect();
+  }, { threshold: 0.15 });
+  io.observe(chart);
+})();
+</script>
+
 ${ctaBlock("Have a treatment plan already?", "Use the calculator to compare your treatment type across the U.S. baseline and all three destinations.")}`,
   });
 }
