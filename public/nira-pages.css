@@ -436,6 +436,32 @@ td { color: var(--charcoal-2); font-size: 14px; }
 .contact-hero h1 { font-size: 52px; line-height: 1.06; }
 .contact-form-section { padding: 0 0 80px; }
 
+/* ============ Quote Split Layout ============ */
+.quote-split {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 64px;
+  align-items: start;
+  padding: 64px 0 80px;
+}
+.quote-left { position: sticky; top: 96px; }
+.quote-left h1 { font-size: clamp(34px, 3.5vw, 48px); line-height: 1.08; margin-bottom: 18px; }
+.quote-left .lede { margin-bottom: 36px; }
+.quote-trust { display: flex; flex-direction: column; gap: 16px; }
+.qt-item { display: flex; align-items: flex-start; gap: 12px; }
+.qt-ico {
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  background: var(--cream-2); display: flex; align-items: center; justify-content: center;
+}
+.qt-ico svg { width: 16px; height: 16px; stroke: var(--sage-deep); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.qt-text strong { display: block; font-size: 13px; font-weight: 600; color: var(--charcoal); margin-bottom: 2px; }
+.qt-text span { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.quote-right iframe { display: block; width: 100%; border: none; }
+@media (max-width: 860px) {
+  .quote-split { grid-template-columns: 1fr; gap: 36px; padding: 44px 0 60px; }
+  .quote-left { position: static; }
+}
+
 /* ============ Quote Form ============ */
 .qform-wrap {
   max-width: 680px; margin: 0 auto;

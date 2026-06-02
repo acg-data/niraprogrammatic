@@ -1061,17 +1061,37 @@ function quotePage() {
     pagePath: "/quote",
     current: "",
     main: `
-<section class="contact-hero container">
-  <div class="rule"></div>
-  <div class="eyebrow">Get Started</div>
-  <h1>Compare your dental quote<br/>with confidence.</h1>
-  <p class="lede">Share your details and a Nira coordinator will reach out with a personalized comparison at no cost to you.</p>
-</section>
-<section class="contact-form-section">
-  <div class="container">
-    <iframe src="https://tally.so/embed/LZkgDl?alignLeft=1&transparentBackground=1&dynamicHeight=1"
-            width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0"
-            title="Nira - Compare Quote" style="border:none;display:block;width:100%"></iframe>
+<section class="container">
+  <div class="quote-split">
+    <div class="quote-left">
+      <div class="rule"></div>
+      <div class="eyebrow">Get Started</div>
+      <h1>Compare your dental quote with confidence.</h1>
+      <p class="lede">Share your details and a Nira coordinator will reach out with a personalized comparison — at no cost to you.</p>
+      <div class="quote-trust">
+        <div class="qt-item">
+          <div class="qt-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="qt-text"><strong>Vetted providers only</strong><span>Every clinic is reviewed before we make an introduction.</span></div>
+        </div>
+        <div class="qt-item">
+          <div class="qt-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="qt-text"><strong>Response within 1 business day</strong><span>A coordinator will follow up personally.</span></div>
+        </div>
+        <div class="qt-item">
+          <div class="qt-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="qt-text"><strong>No cost, no commitment</strong><span>Your comparison is completely free.</span></div>
+        </div>
+        <div class="qt-item">
+          <div class="qt-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="qt-text"><strong>Your information stays private</strong><span>We never share your details without permission.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-right">
+      <iframe data-tally-src="https://tally.so/r/VLDaWy?transparentBackground=1&dynamicHeight=1"
+              width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0"
+              title="Nira Form" style="border:none;display:block;width:100%"></iframe>
+    </div>
   </div>
 </section>`,
     scripts: `<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);}</script>`,
